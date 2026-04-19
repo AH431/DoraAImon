@@ -1,0 +1,360 @@
+
+In this segment, we're going to talk about NoSQL database
+technologies.
+NoSQL databases are different than all
+of the relational database technologies
+that we've talked to up until this point in the course.
+They relate to a non-SQL, non-relational database
+technology set.
+The whole premise of NoSQL databases
+comes from one major problem.
+When relational database tables get very big,
+like millions, and millions, and millions of records
+big, joining two tables together is really
+time consuming in a normalized relational database system.
+So when, for example, if you have a very large orders
+table and a very large customer table, this just becomes very,
+very time consuming if you don't have enough indexes
+in the right places.
+And even if you do, to actually execute
+queries in a timely fashion.
+NoSQL databases offer an alternative solution to these.
+And the whole idea of NoSQL databases
+is that data are not stored in explicit table structures
+with relationships.
+Instead, the database is designed with simple reads
+and writes in mind.
+For example, if you wanted to have all of the data
+that you needed for a customer order on a web page
+and you needed to include something about the customer's
+shipping address in that page, you
+could imagine you could have a table that's
+designed and prejoined with all the data you
+need for that specific type of query.
+So it's designed to get at this problem of joining those two
+tables together.
+And it doesn't have to be structured in that way.
+But this is just one application that
+can be solved by not having strict, normalized relational
+databases.
+NoSQL databases are really easy to scale because of how simple
+the structure is.
+You can imagine if all you need to worry about
+is scaling by the set of facts that you need to store,
+you can write to a database table
+like that that's very simple without a structure,
+like a very strict relational structure in place,
+very quickly.
+So you can store data and you can retrieve data
+with just the style or structure you have in mind.
+
+But it's important to mention that not all problems are
+actually suited well to NoSQL technologies.
+Specifically, the problems we've been talking about to date.
+Things that have very specific structured relationships
+like customers, and orders, and sales, for example,
+these are very relational data.
+So when you have such a tight relationship,
+it may not be natural to try and solve a problem
+unless you have massive scale of data
+that would require a different solution
+or a different approach.
+It's important before we go further
+to say that there are lots of different types of NoSQL
+databases.
+So right now, there are many vendors
+that are making systems that are not relational database
+systems.
+And while the SQL database side of things
+is actually very standardized and homogenized
+and the implementations may be different under the hood,
+NoSQL is a whole different world.
+So there are just many types of problems to solve
+in unconventional ways.
+And so there are many different systems in place
+to do this type of work.
+So we're going to talk about some common types of NoSQL
+databases, but there are many others.
+And we're just kind of touching the tip of the iceberg here.
+So one of the simplest and most standardized lookup systems
+that exist in NoSQL databases are key value pair databases.
+And so you can think of these as a simple lookup
+table or a dictionary.
+And what they do is you might have a key that's
+linked just to any value.
+So, for example, key 1,000 in this table has the value Chris.
+And 100,1 has Julie, and 1,002 has Clark.
+In an example like this, in this table,
+I wouldn't know ahead of time that, for example, a key
+would be linked to what appears to be a first name.
+There's no structure or names of these columns,
+for example, of what the value means.
+So all I can say is that there is
+a simple table with a list of key values
+that seem to be unique and values of those keys
+that are related to what appear to be first names.
+There's nothing else in this system that tells me explicitly
+that this name must be linked to, say, a person,
+or that that person must be a customer, or instead
+an employee, for example.
+So these key value tables, you can imagine,
+are extremely simple.
+The keys allow us to build a lookup system that's
+very fast to search through, very similar to what we were
+talking about with indexing.
+And the values seem to store a very simple fact.
+You can extend this technique, this key value
+lookup using things like JSON.
+These are formats that allow you to store more than one fact
+in a value table.
+So for example, if you have this example of a key value store,
+you can have each key related to a bunch of different facts
+that are related to one thing.
+So for example, key 1,000 appears
+to have a name of Chris, and a language of English,
+and a city of Boston, and a state of Massachusetts.
+And 1,001 has a name of Julie, and a state of New York.
+And 1,002 has a name of Clark, a language of French,
+and a language of Spanish.
+One thing you should notice right away
+is this does seem a little bit like the Wild West
+in terms of what we're storing for each
+of these values related to the keys.
+So far, just by reading this, it looks
+like these relate to people.
+But I have some facts about some people
+and some facts missing about other people.
+For example, I don't know Julie's city is.
+I don't know what-- if she speaks any languages.
+I can't tell any of that from this structure
+because there really isn't that much structure.
+All we have is a key that links us up
+to kind of like a blob with a whole bunch of different data
+types and values.
+So this is a more complete view of this person maybe,
+for example, say, in some context.
+I still have no idea if this is a customer.
+I have no link to any orders they've placed, for example.
+So you can tell this is just a very different approach
+than that strict relational database table set
+that we looked at before.
+So it's important to remember that each record might
+have different data fields or attributes.
+And these could be stored together just
+with this unique key that we have.
+So all we know is that there is going
+to be some representation of some person with potentially
+what looks like it's very different data for each value.
+This is something you have to think about when you're writing
+your programs to make sure that you understand something
+about the structure.
+The data model isn't defined ahead of time.
+So you're just looking at this list of key value pairs.
+And it doesn't tell us much about the structure,
+or the relationships of the data,
+or how much data might be redundant, for example.
+Like where we need to update data.
+For example, if Chris moves, or if Julie moves,
+or if Clark learns another language.
+We don't know all the places where all of this data
+is necessarily stored.
+So this is something we have to keep track of externally
+from where the data is explicitly stored.
+So some NoSQL databases help you do this.
+But others are really, really focused on performance
+and expect you to know what you're
+putting in this data store.
+And their focus is simply on finding and updating
+some value related to a key.
+And so what do we mean by this?
+For example, what if we added another row to this table right
+here and we put the value MA in it?
+Well, this may be completely right
+because our program is expecting to find something at key 1,003
+with a value of what looks like a state.
+But if we didn't know that ahead of time
+or we hadn't written our language around that in our program,
+it wouldn't understand necessarily
+how to handle the value of 1,003 to be a state.
+So we-- that's stuff that we really
+have to think about ahead of time
+when we're using these types of systems.
+There are other types of systems of NoSQL databases
+that are really document-oriented.
+And they're similar to the key value databases
+that we've seen before.
+Instead, the key value pairs can be further grouped
+into collections.
+And these are typically related to what we've already
+thought about as entities, where we have a customer or an order.
+And there's a whole bunch of data
+that's related to those customers or orders.
+And so, for example, we might imagine
+having an employee table, which has key value pairs in it.
+But instead, it has all of the details about employee Chris.
+And so this collection of data is going
+to be related to an employee.
+And it will tell us something about those employees
+that we need, for example.
+So we-- it's just adding a bit more structure and a bit more
+notation to what we've already seen.
+For example, we could also have an Office's table
+in the same database.
+And it's keys and values would actually represent offices
+that these employees work at.
+What's different than what we've seen in the relational database
+system so far, though?
+So for example, one thing that's different
+is that we can see that there's certainly duplicated data.
+So in this Employee's table, we see that Chris lives or works
+in Boston.
+And in the Boston office, we see that there's
+an employee Chris and an employee Clark who
+we didn't actually record that he works in Boston or lives
+in Boston, for example.
+So right away, we can see that there's
+duplication of data, which we might worry
+might get out of date, right?
+So it might get stale or have incorrect values over time.
+But another thing that we can see
+is that there's a bit less structured in general.
+So for example, I don't know that this employee ID for Chris
+is actually key 1,000.
+I'd have to store that differently than maybe
+I have in this system design.
+Maybe I'm just going to store some rudimentary data
+about Chris or Clark, or the fact
+that they are employees, just so I
+can make a list of all the employees in the Boston office
+for this Office table.
+It's not a strict ID-based system
+that relates these two tables to one another.
+So you really start to see that there's very little business
+process enforced in this type of NoSQL database.
+Even though it is very convenient
+to be able to list out all the employees
+that work at an office really quickly just
+by knowing the key number of the office.
+So if that's something that you need
+to do routinely for a report or to make a web site faster,
+geez, this is totally a great way to do it.
+But it comes with all of those caveats
+that we've talked about so far.
+Another type of NoSQL database is a column-oriented database.
+And you can think of this as just
+imagine you're indexing every single column
+in a relational database with a row.
+So for example, if I had an Employees table with each row,
+row 1, 2, and 3, which could be like the key,
+and it has some structured data about these employees, say,
+their first name and the state that they work in.
+So there's Christopher who works in Massachusetts.
+Julie who works in New York.
+And Christopher who works in New York.
+And these relate to row 1, 2, and 3 from our Employees table.
+The row ID act as the key.
+And the attributes act as the value.
+And so here is the major difference.
+If we want to actually learn where the first name is
+Christopher in our Employees table,
+we store a first name of Christopher and Julie,
+which has all the unique values of the first name
+column in this table.
+And then we start all the row IDs
+where that first name appears.
+So if we needed to look up all of the different Christopher's
+in our organization or all the Julie's in our organization
+very quickly, we can do it with a table like this,
+which kind of serves as an index for this Employees table
+on the First Name field.
+Similarly, we could do a state lookup table,
+which would have all the employees that
+are in Massachusetts or in New York.
+And so in Massachusetts, we know only row ID
+one relates to an employee in Massachusetts.
+And rows two and three relate to employees in New York.
+So now information about each column
+is stored very efficiently for some specific types of queries,
+such as looking up people or employees by first name
+or by state.
+And you can imagine this will make
+it very, very high performance for when you're searching
+for specific types of data that relate
+to one other type of table.
+There's also a graph database where
+we capture all the different connections between data.
+And they're not created during a query
+like a relational database.
+What they're doing is they're making
+it really efficient for highly connected systems.
+So for example, if we wanted to capture a whole bunch
+of connections that happen--
+this is very common in some sites
+like Facebook or LinkedIn.
+And so the situation that this is directly trying to solve
+is when you have some complex, interconnected data.
+And so this data might be something
+as simple as the relationships between a person who
+is an author, like John Le Carre who wrote Tinker Tailor Soldier
+Spy, which is a book.
+And then some people that actually purchased those books
+and when they purchased them.
+So Ian purchased this book on March 2nd.
+And Alan purchased this book on May 7th.
+And so we've got a whole bunch of facts
+about these people and types about them.
+So we know that John Le Carre is a person who is also an author.
+We know that this is a book.
+We know that Ian and Alan are people.
+And we also know that there are other books that these people
+have purchased.
+So Ian has purchased this book Our Man in Havana,
+which we know is a book.
+And it was written by Graham Greene,
+who's a person and an author.
+And so these are pretty complicated,
+interactive facts about whole different types.
+And we can see how they kind of work together from both sides.
+There are authors, but there are also consumers apparently.
+And there's some dates that we need
+to keep track of when things were purchased.
+So you could imagine if your data are highly interconnected,
+these graph databases may be better
+at solving the types of implementation problems
+you need to solve so that you can retrieve
+just the right types of data quickly.
+And so we've talked about a whole bunch
+of different major types of NoSQL databases so far.
+And these often fit into very distinctive types
+of software stacks.
+Software stacks primarily help us solve one specific type
+of problem really well.
+And so you can imagine you have some technologies that are used
+that are pretty well connected to one another,
+say, for building application, and also for storing the data,
+and for making the application more responsive or more
+structured in a way that you need it to be.
+And so given whatever application.
+You have in mind that you need to develop,
+you need to think about just the right type of database
+for the problem that will store the data the right way for you,
+and also how it works together with different programming
+languages.
+And this is a whole field of different active development
+techniques.
+So with that, let's go over some key points from this lesson.
+The first is that NoSQL may be faster in some use cases.
+And those are specifically where you
+can design the data model around the application that
+needs to be done.
+Transactional business data is still commonly stored
+in relational databases due to the importance of consistency
+and how reads and writes are handled.
+Finally, there is no single right answer.
+So companies might actually use different types
+of databases for the various operational tasks
+that they need to accomplish.
+Some tasks may be well-suited to consistent relational databases
+that have very strict structure and dependencies,
+while other tasks might be very well suited
+for being done with NoSQL technology.

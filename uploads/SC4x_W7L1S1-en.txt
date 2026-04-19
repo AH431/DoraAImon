@@ -1,0 +1,139 @@
+
+In this lesson, we're going to start talking about information
+technology systems.
+We'll get to supply chain systems,
+but I want to start with the backbone of most companies,
+which is the ERP, or the Enterprise Resource Planning
+system.
+But first, let's start with a general question--
+why do supply chains even need information technology or IT
+systems?
+Well, think back to, I think, our very first lesson
+of the very first course.
+And we talked about the three flows,
+where you have information, you have material flow back,
+and money or payment.
+So you have all of these flows happening.
+And so if we focus on this very simple two-node supply chain--
+let's just focus on the right-hand side,
+that supermarket.
+Think about how many transactions take place
+in the supermarket each day.
+How accurately can a system capture them?
+How do we know that the information
+is consistent and current?
+How can we use that information to make business decisions?
+Because that's really why we collect the data.
+We have data and information so we can make better decisions.
+And how can these objectives be achieved efficiently?
+So if we look at this store, we have all the transactional data
+that I mentioned before, whether it's
+information or records or physical delivery
+or records of payment.
+We also have other things that it has to keep track of--
+the inventory from the supplier, expired and obsolete inventory.
+It's sales out.
+It's point of sale system and any kind
+of facility management, human resources, or payroll.
+So there's a lot of activity happening, even
+in this simple, simple supply chain
+with a single supermarket.
+And in one store, in just one week,
+millions of these transactions can occur.
+So it isn't just one node at the supermarket,
+because we know that each facility is actually
+part of a larger set of nodes and arcs within a company.
+And even worse, it's part of a larger supply chain network
+that includes multiple companies.
+So we have all these different interactions
+that increase the number of transactions
+that we have to worry about.
+And then you have to think about the process.
+So think about the business processes that we talked about
+in previous courses, where you have an input,
+you do something, and it triggers an output.
+So you can think of this in supply chain for a firm.
+One firm takes a bunch of inputs,
+turns those into outputs that are an input to another firm,
+turns those into outputs that are inputs to another firm,
+and so on.
+This is the supply chain.
+So when we look at this from a macro process view or macro
+perspective, we can think of each company,
+and how it connects to its suppliers and its customers,
+and what it does internally.
+And what we did before in previous classes--
+we broke this up into three main components--
+things that deal with the supplier management process
+for sourcing, things that deal on the other end with
+the customer management processes--
+the CRM or Customer Relationship Management--
+and then things that happen within the company itself--
+the make, move, and store.
+And these are the internal supply chain processes.
+And what we made the point of--
+when you make these decisions, you're
+not going to make them in isolation in a silo.
+You have all these different functions within a company,
+whether it's procurement, finance, manufacturing, R&D,
+logistics, marketing and sales.
+We could put HR in there, all of these other functions.
+And almost every one of these decisions--
+whether it's dealing with the supplier,
+dealing with a customer, or dealing with internal actions
+to make, move, or store--
+it involves, to some degree, all of these different functions.
+So the whole idea is we need to interact with each other.
+Data needs to flow easily, cleanly
+between these different functions.
+So why do we need IT systems?
+Well, supply chains are big.
+They're complex.
+They involve multiple players.
+They're very intertwined, where one individual action impacts
+others, whether that's within a firm
+or across a whole supply chain.
+We need to make better decisions with common data.
+This is what's known as one version of the truth.
+It's better if only one set of data
+is out there, because everyone is making decisions
+off the same set of data.
+And we need to interact with other functions in the firm.
+And this requires seamless, instantaneous communication
+for B to B, B to C, and what's known
+as M to M-- this is business to business, business to customer,
+and then machine to machine.
+And we'll talk more about these.
+But these are just forms of communication.
+So information technology systems
+really are the things that help us do this.
+So we're going to talk about three classes of IT systems
+in this lesson and in the rest of this week.
+The first is ERP, and that's what
+we're going to focus on in this lesson.
+And this is the general ledger, the central database
+or repository for all firm activity.
+In the next lesson, we're going to talk about supply chain
+planning.
+And these are things such as production planning
+and scheduling, demand planning, product lifecycle management,
+things that we've actually talked about in small toy
+problems in previous courses.
+We'll talk briefly how that fits into the bigger picture
+and how that sits on top of, in most cases, the ERP.
+And then we'll spend a fair amount of time
+in the next lesson talking about supply chain execution tools.
+These are transportation management systems or TMS,
+warehouse management systems or WMS, as well as
+manufacturing execution systems, or an MES.
+So that's what we're going to talk
+about for the rest of this week.
+What I'm going to talk about for the rest of this lesson,
+though, are these five simple questions.
+I'm going to try to answer them.
+First, why do firms use ERPs specifically?
+What are the core functions of an ERP?
+What data is needed?
+How do these systems communicate?
+And what are some of the strategic benefits of an ERP?
+So let's get started.

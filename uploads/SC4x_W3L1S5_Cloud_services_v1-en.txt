@@ -1,0 +1,317 @@
+
+In this segment, we're going to talk
+about a rapidly growing area of computing
+called cloud services.
+Cloud computing has developed dramatically
+over the last decade and can refer
+to a number of different things.
+Some of the older technologies that are still very much in use
+are infrastructure as a service.
+So infrastructure as a service, or IaaS,
+is when you outsource your hardware to a vendor.
+This provides users with the ability
+to scope every single component of their system,
+including the operating system, the database, the application
+stack, as we've discussed, and lots
+of other components such as networking and security.
+This is really flexible, but it has a little bit more work
+for you to do when you're implementing on it.
+So this platform means that you have to actually understand
+how you want your operating system, database,
+and stack to be configured.
+You have to take care of the security
+and all of these types of things,
+aside from some rudimentary things
+that might be offered as features on those platforms.
+And because of this, there's a higher upfront total IT cost,
+and that total IT cost can be broken down
+into the cost of administration of the servers and any tools
+that you need to purchase, as well as
+any licensing fees, and also the infrastructure that you
+have to kind of rent upfront.
+And so there are companies that actually
+provide these services.
+They have a lot of off the shelf things as well.
+But this is sort of the most open ended, flexible system,
+and really kind of is just you renting a server
+on another system.
+The next one up is platform as a service.
+And so platform as a service is really
+when you outsource just the operating environment.
+So for example, if you get a cloud platform that
+provides the operating system for you,
+or database functionality for you,
+or other services, which we'll talk about in just a bit,
+there's a bit less work for you to do.
+So there are stacks that are available as images for you
+to start from so you don't have to actually worry
+about necessarily keeping the most up
+to date patched version of your software.
+There's some support for this.
+And so these cloud platform services--
+for example, AWS or Microsoft Dash or Google Cloud--
+these really allow you to kind of rent
+an already existing operating system and some database
+capacity on a working operating system, a database system that
+already exists.
+So we'll talk a little bit about how that works.
+But this is kind of the next level
+up, where it's a little bit higher level for what you get.
+And then there are a lot of different features
+that you can build from as well.
+And then the last is software as a service.
+And this is kind of the highest level of service
+that's available, where you're really just outsourcing
+the software.
+And so this is really configuration of a third party
+app, where an application already exists
+and your company has some sort of customized version
+of the software, or data that's fed into the software, that
+allows you to do things that are relevant for your business
+on an existing platform that somebody else completely
+maintains.
+This can be the least flexible because you really
+are beholden to whatever application developer is
+making the software.
+But it has a lower upfront total IT cost,
+so you don't need people who understand
+how to administer the servers.
+You don't need to actually rent servers
+that you may not use the full capacity of and things
+like that.
+There are some real benefits of using the cloud.
+Of course, it's become very popular.
+But just to explain some of these,
+the first is that there's a low startup cost.
+So for example, in the old days, you
+would have to actually scope out what
+the total computational requirement for a project
+or for an application or a company might be.
+And you had to forecast how many users might be on the system,
+and what the concurrency requirements and specifications
+might be for the system, and try and make estimates
+ahead of time without knowing how well the software will work
+and how much memory it might require,
+how many application servers you might
+need versus database servers.
+And you can imagine all of those things
+are very hard to forecast, especially
+early on in the inception of a project.
+And so cloud computing allows you to kind of take a step back
+and say, I can build a platform on this cheap version
+of a server and see how it works,
+and see how it scales with the number of users that I get.
+This allows you to prove out your technology
+in a prototype that doesn't cost you a whole lot of money
+to set up.
+And then you can grow it over time
+and scale it up as you need to as the user demand grows,
+as the demand on your system grows or the service grows.
+So this is a really helpful benefit of the cloud.
+This lowers your risk during development and testing
+of your product and allows you to try new things out
+and prototype new services that you might not
+take the risk on otherwise if the costs were much higher.
+Another benefit of the cloud is that managed hardware
+and software take a lot of the headaches and hassles off
+of your plate.
+So you can imagine you don't need
+to hire people that are experts in managing the hardware
+and making sure that the security of the building
+and the infrastructure is solid, and all those details.
+And furthermore, you don't have to worry about-- say,
+for example, if you're using a software as a service system,
+you don't need to know exactly how to configure
+the software perfectly.
+Somebody can help you with that who
+can help modify an application that already exists for you.
+And it takes a lot of the burden for hiring people
+with that type of expertise.
+Another benefit of the cloud is global reach.
+So many cloud platforms have servers
+co-located throughout the globe.
+And what this means is that your service will be very rapid
+and work really well in lots of regions.
+And you can even specify, many times,
+which regions you're concerned about so
+that your software and your data will
+be in those regions ready to use, and so that the latency,
+or the amount of time that it takes for a user in one
+of those regions to hit a server with the relevant data
+is really dramatically reduced.
+And so if you ran your own servers
+and you had them at your own facility,
+it would be very slow, or relatively very slow,
+for a user in another continent to reach that server
+and to get the answer back that they need very quickly.
+And so these co-location services
+that are provided by many of the platforms
+allow you to have that reduced latency and that global reach
+where your software and your data need to be.
+The next thing is kind of related.
+It's that the servers and the services that you
+might use on the cloud are highly available and highly
+durable.
+And I mean a few different things by this.
+There will always be a server for you to be able to rent out,
+and those servers have excellent uptime because of the platform.
+The whole purpose of the platform is to be available
+and to rent out capacity, some computing
+capacity or some storage capacity,
+or some database capacity.
+So the whole purpose of these platforms
+is to make sure that they're available
+and that they can scale quickly as you need them.
+So this means that somebody else is
+working on making sure that you have excellent reliability
+and uptime.
+The other thing is highly durable data.
+So for example, if you needed to store your own data
+for your company you'd have to come up with a mechanism
+to make sure that the data is in enough locations that
+are geographically separated and available in different networks
+to make sure that you can always get access
+back to that data when you need it.
+And in case two or three hard drives
+break that store this data, you should still
+be able to get access to that data
+from some sort of backup or something.
+You can imagine that's a lot of overhead
+and work for somebody to do and to manage.
+And so because this is done at scale,
+just like the servers are done at scale, now
+on a giant platform, somebody else can worry about all
+of those details for you.
+And the cost to actually implement
+such high performance and availability
+and durability of your data is dramatically reduced.
+The next thing we've mentioned already
+is that you can scale on demand.
+And really, the next part of this
+is that you can pay only for what you use.
+And so that's going to be a really strong benefit.
+Say, for example, you need to only do
+an analysis for one of your services,
+and it has to be done every night so that the data is
+prepared for the next day.
+So you can imagine running a server 24/7
+to operate on something only at night is not really that worth
+it.
+So you can save a ton of money by only
+using the service, or many servers, when you need to.
+In some cases you can even make these cloud services
+work together with your local infrastructure if you need to.
+Say for example, if your system has some locally generated
+data, you can transmit that data to the cloud,
+and there are systems in place to help you do
+that type of stuff routinely.
+The next thing I want to expand on a little bit
+is that a lot of these platforms that have,
+say, for example, platform as a service,
+offer lots of different features to process your data,
+to store your data, to analyze your data,
+to visualize your data, even.
+So we're going to pick just one pipeline.
+And I'm sorry to have picked a vendor,
+but we're just going pick Amazon Web Services, just as
+an example to show you some of the features that are
+available with this service.
+You We'll show you kind of how these work,
+but you can really go to any platform as a service provider,
+and they probably have an analog for most of these things.
+So for example, one service I'm sure you can imagine using,
+if you've learned about it, is Amazon RDS,
+which refers to relational database service.
+And so those are like the databases
+that we've learned about, like MySQL, for example, which
+allows you to store relational database tables
+and to access information from those tables on demand
+when you need them.
+And so this service allows you to completely abstract
+the implementation of a database server
+and leave it to the platform provider.
+You can tell this platform provider, I need a database,
+and it should have these tables with this data in it.
+And then you can just run the commands on it,
+and you don't have to worry about making sure
+that you have enough database servers
+and that they're synchronized.
+The platform provider will handle all of that work for you
+and will worry about backing up your data and the security
+of your data.
+And so this is a really nice feature for people
+to be able to use so that they can completely abstract away
+the storage of their data or their database service,
+for example.
+And there are lots of different types
+of services that are available.
+So there's also a data warehousing service that's
+available called Redshift.
+And Redshift allows you to set up
+a cluster where you store lots of different pieces of data
+about your business.
+And this is supposed to scale up to petabytes.
+And the idea is that you can then run data analysis
+algorithms on those clusters, depending on how you see fit
+and what performance you need.
+The next step we'll talk about is the NoSQL version
+of the database store.
+And so Amazon DynamoDB allows you
+to have a NoSQL implementation where you can
+store lots of key value pairs.
+The last thing that I'll mention is there's even
+machine learning platforms.
+So we'll be talking about those later, just
+generally how machine learning works,
+but there actually is a service that
+allows you to do and implement specific machine learning
+applications and tasks on your data.
+And this is available as a service on this platform.
+Again, this isn't the only platform that
+offers these types of services.
+I just wanted to show you one example from one vendor.
+But you can imagine that if you needed
+to implement some machine learning service,
+that it's great that it's available and ready to go
+for you to use, and you don't have to do any configuration
+other than the rudimentary things
+that you would want to do anyway to implement
+one of these algorithms.
+So the key points from this lesson.
+Platform as a service removes the high startup cost
+of owning hardware and the IT costs of maintaining
+the hardware.
+Of course, those costs are built in.
+You have to rent the hardware and you
+have to rent those database services,
+and you have to kind of use those by the hour,
+and you have to specify how great those have to be
+or not great they have to be, depending on how much
+you want to pay for them.
+So while there is still work involved
+in administering these systems, the large majority
+of the startup cost of owning the hardware,
+for example, making the physical platforms and facilities
+to store these and secure the servers,
+to procure all the maintenance and the hardware
+and all these licenses and things like that,
+and the IT cost of maintaining that hardware
+is dramatically reduced, especially up front.
+The next thing is that you can rely on the information
+technology from large platform as a service companies
+to create services that are highly available
+and that store data in a highly durable manner.
+So you can co-locate your services in the regions
+where the data is especially needed,
+or you need to reduce latency, you can make sure
+that you have excellent uptime characteristics,
+and you can make sure that you don't lose access to your data
+or lose it all together.
+With platform as a service, users
+are still responsible for figuring out the best way
+to implement these services.
+These aren't foolproof.
+You still have to figure out what the right things to scope
+are, and actually how to implement
+those services effectively to do the tasks
+that you need to accomplish.

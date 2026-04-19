@@ -1,0 +1,276 @@
+
+In this segment, we're going to dive deeper into model quality.
+And these are questions related to how good
+is the model in terms of being generalizable and making
+future predictions.
+There are two big characteristics
+about model quality.
+The first is bias, and the second is variance.
+Bias quantifies the lack of ability
+of a model to capture the actual underlying trend in the data.
+That means that if your model doesn't capture
+all of the characteristics that are going
+on inside the data set, it might produce results that are off
+in one direction or the other.
+There are a whole bunch of reasons
+why models can become biased.
+One of the biggest ones is how the data
+is sampled in your testing and training sets.
+You can imagine if you train a model using
+some biased subsample of your records
+that are different than the overall records
+or really small sample of records,
+it would lead to non generalizable performance
+for the model.
+You'll be producing a model that is different than what
+it shouldn't be, in terms of capturing the underlying
+trends in the data.
+Another major reason that bias can happen
+is because the model is either too simple or too complicated.
+And so this can lead to what we call
+overfitting or underfitting, which we'll go through.
+
+The second major component that we'll talk about is variance.
+And variance quantifies a model's sensitivity
+to small changes in the underlying data set.
+So the variance of a model depends
+on how it's being trained.
+And if you sample subsets of the training data
+and retrain the model, it shouldn't
+change very much if the variance is low for the model.
+So you can imagine if the underlying data
+set is very representative and it's very large,
+you should be able to use small portions of it
+or leave a few samples out, and be able to get just
+about the same model.
+But the variance can go up if the model does not
+capture the data set really well,
+and if it also doesn't have really representative set
+of samples, if there is some unusual nature
+to the samples that are being used in training.
+We'll go through this later.
+Ideally, we're looking for low bias and low variance.
+But there's a trade off between these two quantities.
+If we make a model very complicated,
+and we're able to really do a very good job
+of recapitulating a training data
+set as we did with the San Francisco and New York housing
+data when we fully built the tree out to 100% accuracy--
+and when we did that we saw that we got really low bias.
+We were able to get 100% accuracy
+in identifying the details of our underlying data set.
+But when we went to go and predict on completely new data,
+we changed the data set that we're using,
+and we had high variance in that output.
+We actually had a much lower performance,
+89% versus 100% accuracy.
+So you can see that there's a trade off between these two
+quantities.
+So the more complicated we make the model,
+in general, will decrease the bias,
+but will tend to increase the variance.
+The next thing we want to think about
+are the specific ways in which we
+can pick a representative training
+sample that will keep our bias low and also reduce
+our variance.
+And so you can imagine there--
+with an error on the y-axis, this
+is kind of just the overall difference
+from the model from reality, and the training set size going up.
+Say, we're making more and more example records in our data set
+that are included for the training process for the model
+so that we can look at a lot of historic data if we're here--
+or maybe not so much historic data if we're here--
+for building our model.
+What we have over time is an improvement
+in our performance on the testing
+data set by adding more and more examples to our training set.
+So the idea being that if we build a model with a whole lot
+of examples-- say, our training set is really large--
+it will tend to get just about the same error for a testing
+data set as we do for training data set.
+And the idea there is just simply
+that if we make the sample large enough
+and it really is representative when we build our model, well,
+it won't be very different than the testing data at all,
+and will actually be very close in terms of actually building
+out an accurate model.
+The difference, though, between the actual desired low
+bias and the low error and the actual performance
+of the training and the testing data sets is called the bias.
+That's how far of who we are from the actual realistic
+underlying characteristics.
+So the bigger we make the training data set size,
+the more chance that there is that we actually
+will be a little bit biased by looking at some of those
+edge cases and characteristics that
+might not be wholly representative of the sample.
+The goal is, though, to reduce the overall variance.
+You can imagine if you pick just a few examples
+to train your model, you won't actually
+do a really good job of picking a representative sample,
+and you won't really understand the model very well
+for the underlying data set.
+And if you do that, then what happens is you're testing error
+is very high.
+So the goal is to first get that testing error low, but not
+hash out such a large data set that our process is slow
+or that we can add to bias by looking at specialized edge
+cases.
+So a large and representative sample of the label data
+should be used to train the model
+and the remainder should be used for testing.
+What do we mean by representative?
+We want to make sure that when we sample,
+we're sampling randomly and we're not
+picking subsets of the sample.
+What do we mean by large?
+It should be large enough such that the testing error goes
+down, but it's not so large that the model becomes unwieldy
+or could be potentially biased.
+So next we want to think about overfitting
+versus underfitting models.
+So if we underfit a model, it means
+that our model is too simple, that it's
+going to have high bias, but maybe low variance.
+And so in this case, if we fit a model like this, where
+we have our points that are kind of going in an arc here,
+and we fit it with a simple linear model,
+the goodness of fit might actually
+be very good, almost as reasonable
+as a noisy data set that truly followed this line.
+But the model's clearly too simple.
+If new points come on this arc, well,
+it'll probably be somewhere along the arc.
+It won't really be along this line.
+So we'll be in a high bias situation,
+even though the variance in this model is not very big.
+Conversely, if we look at an overfit model,
+the model's too complex.
+There's low bias from the underlying data,
+but there's a potential for very high variance for new points
+that would be added.
+So if we look at something like this,
+where we have a bunch of different points
+that are kind of close to a line,
+well, if we pick a more complicated model
+than a linear model, we'll be able to see that we'll actually
+kind of follow through all of these points exactly.
+But that's not truly what might be representative
+of this underlying data.
+There might not be this extra hump here or hump here.
+There just happens to be a point that's
+a little bit far away from the line in this situation.
+And so we might have made too complex of a model
+to actually be representative of the underlying data.
+And this will add too high variance and low bias.
+So we want something that's kind of the Goldilocks,
+something in the middle, something
+that's generalizable to new data, but not too simple.
+
+The next thing we need to think about
+is overfitting with respect to model complexity.
+So overfitting is a more common pitfall than underfitting.
+It's tempting to sometimes make our models fit better
+by adding more features as we did with that San Francisco
+and New York housing data set.
+Remember, we were adding really, really deep tree structures,
+sometimes even adding the same feature
+or characteristic again after we'd considered it before.
+This would lead to a really overfit model
+that would get more accurate answers for the training data
+set.
+But then, again, would be hard to recapitulate
+in a testing set data.
+And this can result in a model that's
+incapable of generalizing beyond the training data.
+We saw this with the New York and San Francisco housing data.
+Let's look at a plot of the error in the model
+versus the number of features.
+We're going to look at the training set error, as well
+as the testing or reality of production error
+that we would have in terms of using
+this for forward predictions.
+So the first thing we'll look at is this blue line,
+the training set error.
+When we had only one feature, the elevation of the house,
+whether it was in New York or San Francisco,
+we got some decent accuracy out of that rate.
+So we got over 80%, I think, when
+we got one split point that was pretty good.
+And then, when we edited another characteristic, the price
+per square foot, we added another feature,
+we were able to get down-- get even higher accuracy.
+So we reduced the error.
+And as we added feature after feature,
+we were able to improve the training set accuracy so
+that there was no error left.
+We actually got to 100% accuracy.
+But in our testing if we, say, tried to use those models
+on another test data set of New York and San Francisco houses,
+well, in the very beginning, with just the elevation,
+we'd only used one parameter of the model
+and, hopefully, the set was a representative training
+and testing set.
+So we would do almost exactly the same in our testing
+as we did with our training.
+Maybe we would have a little bit less accuracy because the split
+point would be moved a little bit in the testing set--
+it should be in a slightly different place.
+But that was-- we'd almost do exactly the same
+in terms of accuracy.
+As we add more and more features,
+we might have a little bit of divergence
+between the testing and the training errors,
+but, you know, we'd stay pretty close because we had say,
+captured really generalizable characteristics
+about our model with the features that we picked.
+But at some point we added too many features to the model,
+and we got that error down to 0% for our training model,
+but it was not generalizable.
+We were making rules just for a single house at a time,
+and our testing set error went up and up and up.
+So then we ended up getting only 90%
+performance, or 89% performance at the end
+on our testing data set, even though we had a 100% accuracy
+on our training set.
+So the idea here is that there are some optimal number
+of features that we can use in our model that will be general
+enough so that it will be actually useful in making
+forward predictions in other data sets,
+and it will actually contain enough complexity in the model.
+So some key points from this lesson.
+Machine learning models should be trained on an unbiased data
+set.
+This data set needs to be representative of the variance
+in the overall data set.
+It should be representative generally
+of the whole underlying characteristics
+of the overall data set.
+And it should capture just the right amount of data.
+If there's any bias in the training data,
+or if there are too many features included in the model,
+the model is at risk of being overfit.
+So if there's any bias, say, we subsample
+just the wrong segments of our data,
+or didn't subsample them randomly,
+or if we included too many features in our models
+so that we really have lots of depth to our trees
+as we saw in the San Francisco and New York housing data set,
+we're going to have results that are
+very accurate for our training data set,
+but not very accurate going forward in our realistic use.
+In overfit models, the coefficients,
+known as parameters, will not be generalizable enough
+to make good predictions for new records.
+
+So that was the last of our theory
+that we'll be covering for today.
+And I hope you look a little bit more
+like this than you do like this.
+This is my cat, little Sebastian.
+All right.
+Go ahead and look at the quick questions,
+and we'll be back with something more
+exciting in the next segment.

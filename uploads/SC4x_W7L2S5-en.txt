@@ -1,0 +1,265 @@
+Now let me talk about carrier communication and selection
+within a TMS.
+On the communication side, the primary method by which
+shippers communicate with carriers--
+for large organizations anyway--
+are EDI, Electronic Data Interchange, transaction sets.
+Now, every country has its own sets.
+There's some standardization.
+In the United States, they use the ones
+that I'm going to say here, but the concepts are the same.
+So the shipper will tender a load
+to a carrier using an EDI 204.
+And this is known as a motor carrier load tender.
+Now, for ocean and air, they have slightly different
+numbers.
+They have slightly different data fields,
+but the concept's the same.
+It's used by shippers to tender an offer for shipment.
+It can be used for updating, creating, replacing,
+or canceling a shipment.
+And it contains information on who the carrier is,
+the timing, the required equipment,
+where they want to ship to, who they
+should contact at the destination--
+all these different pieces of information.
+Now, the carrier, if they will accept or reject--
+and they'll send back what's known as an EDI 990.
+And in this case, it's a decline.
+But this is used by the carrier for whether they
+decline or accept.
+It's just a different field within the data set.
+So they accept this with different information.
+It might include the rate they did.
+They are willing to pick it up for [INAUDIBLE]
+and other information for scheduling.
+Now, throughout in route, you might have EDI 214s,
+and these are simply status updates.
+And these are used by the carriers
+to provide shippers and other interested parties
+the status of that shipment.
+Now, this would usually contain info
+on the origin, the current location, the dates and times,
+proof of delivery when it's finally delivered,
+and other shipment status to include exceptions.
+So this is how that usually works for communication.
+Now sometimes, for the tendering,
+that is actually done via the web now,
+but it's not as prevalent.
+It's out there, but a lot of times,
+it's easier and much more efficient,
+if you have sufficient volume, to use EDI.
+Because remember, we talked about that.
+It doesn't require any humans.
+This can be system to system.
+And so these updates statuses are very helpful,
+because it just automatically updates.
+Now, we'll talk later about different types
+of communication such as GPS positioning,
+because they have very different characteristics.
+The EDI 214s tend to be triggered by events.
+And so I've picked up the load, I've left the yard,
+I've come to the new location.
+So something happens and the status gets triggered.
+This is different from the GPS location
+that we use on, say, our cell phone, which always tells
+me constantly, I'm at this latitude-longitude
+at this time, I'm at this latitude-longitude
+at this time.
+One is providing context but it's event-based.
+The other is giving constant feeds of real-time positioning.
+So they have slightly different characteristics,
+and we'll talk more about that as these systems are
+starting to blend in next week's lessons.
+All right.
+So these are the transaction systems but there's more
+to it than this.
+So let's look at an example for carrier selection.
+And this is where I'm a shipper and I
+want to cover a load from the plant to that city location.
+Now, I have different types of capacity, different ways
+that I can fill that load.
+And what a TMS will do is make a decision between these.
+It could select my primary carrier.
+This could be the carrier that I selected from my procurement
+event to be my first call on that lane.
+I could also have a dedicated fleet.
+This might be my own trucks or it might be something
+that I'm leasing from a company, and they're there,
+available for me to use.
+I could also look for something called a continuous move.
+This is where I have an inbound load from another carrier,
+coming to a close-by location.
+And if I coordinate it right, I can say, you know what?
+As you drop that one off, come across the street,
+pick up this load, and then take that one.
+Carriers can [INAUDIBLE] like this,
+because it saves them from doing a lot of deadhead distance.
+So you're marrying together loads.
+You see this a lot of times with marriage of inbound
+and outbound at a manufacturing plant.
+Or I could also look at spot rates.
+So spot carriers are out there.
+I might use brokers.
+So I have all these different options to cover this one load.
+So what does this look like?
+I've got this one requirement, this load,
+and I've got these, in this case, four different types
+of capacity.
+Now, each of these capacities comes
+with a cost, the amount of the volume I have available,
+the timing, and other service characteristics.
+And it isn't just for one load at a time.
+A TMS will handle dozens to 100 loads,
+going on that day across the system.
+So what the carrier selection process is doing
+is actually an optimization.
+We're trying to find the best fit.
+And that could be the lowest cost, and it's a matching.
+It's known as a matching algorithm.
+Right?
+Bipartite matching-- I'm matching one piece of capacity
+to each load.
+And so we've actually done this similar problem
+and solved this when we talked about the transportation
+problem.
+So within the heart of a TMS in execution,
+there is a very fast optimization process going on,
+which is matching to the lowest cost or, in some cases,
+the best-fit form of capacity to a load requirement.
+Now, it doesn't always match exactly,
+because sometimes the primary doesn't accept.
+So there are processes built within the TMS.
+Remember, this is more of a workflow
+now, because I'm down at execution.
+And so we've shown this before in a previous class,
+but I just want to reiterate it.
+So this is how TMS interfaces with the order management
+system.
+An order or load gets dropped, they select a carrier
+from the routing guide, they tender to the carrier,
+and if they accept, we're done.
+But a TMS can also have built into it different logic
+for different work rules.
+So let's say the primary carrier does not accept.
+Then, we look at the lead time.
+Is the lead time greater than the minimum that I need?
+If so, I go back to the next carrier in that routing guide,
+because usually, it's priority listed
+in terms of my primary carrier, my secondary, my tertiary,
+and so on.
+But if they in turn don't accept it
+and I keep going through here, and my lead time
+gets shorter and shorter, I might
+want to go to another format.
+And this is where you can escalate and maybe
+go to a set of carriers I have as back-up carriers.
+And I can offer it to multiple carriers at one time,
+and the first one who responds back gets that load.
+Or I could do something where I say,
+here's the price to this set of carriers and the first one
+to accept it, or I let them pick the price.
+So there are all these different mechanisms
+that can be embedded within a TMS,
+and the whole purpose is to have a workflow that's
+automated to make sure our carrier is tendered
+to each load.
+So at the end of the day, you might
+have to go through a couple cycles,
+but hopefully at the end of the day,
+you'd get a carrier to accept that load.
+Now, most TMS's, especially for surface or trucking
+transportation, have some level of this functionality.
+And what it does--
+it's known as many different things,
+but automated escalation is one of the most common names.
+And so typically, you want to go out to the primary.
+If they don't accept that, you go to the backups.
+If they don't accept it, you go to other carriers
+where you might already have existing rates.
+These are your backups.
+And then, you might allow them to set their own prices
+or go out to the public market or the spot market,
+or maybe to a broker.
+And what this does is, the number of carriers
+increases as I go out from my primary all
+the way to a public market.
+And the range of pricing changes dramatically, too,
+depending on whether it's a very tight market or a very
+loose market.
+But what we've done is, we've built in the TMS
+a workflow process that handles the assignment
+of a carrier to a load, based on different characteristics.
+We saw an optimization approach, and then we
+saw a workflow approach, in case the carriers can't take it--
+that there are rejections, which are
+fairly common in a lot of transportation areas.
+So let me tie this all together, because these approaches--
+and more systems are being more flexible here.
+So what I have here is a two-by-two matrix,
+and on the horizontal is how on pricing each load and whether
+it's contract, set ahead of time,
+or the price is set at the time of the tender--
+kind of, a spot.
+And then, on the vertical, I have,
+how do I select the carrier?
+Static means it's been selected ahead
+of time for that lane in a procurement event.
+So I know that Carrier A is always
+going to be my primary on lane 27, for example.
+Or dynamic-- do I decide which carrier
+to use at the time of the tender,
+when the load is dropped?
+And you can see at two-by-two I have four options here.
+And you can think of these as actually three tiers.
+The first tier is where I have static assignment at a contract
+price.
+And this is-- in the United States, 80% of truck load
+goes this way.
+You set up a contract.
+you establish your primary carriers,
+you get a rate that's good for a year,
+and that's what you go with.
+Why?
+Well, it's good for budget planning, its consistency.
+It makes a lot of sense.
+Now, the next tier is where you loosen that up a little bit.
+Maybe you decide which carriers you're
+going to use-- a pool of carriers in this bottom right
+quadrant.
+But I let the pricing be dictated
+by the amount of volume going through each week.
+And so I might have a set [? of ?] carriers,
+but as the volume increases, I might
+be willing to pay those carriers a little more.
+So its tiered, based on volume.
+This is how some companies used to do this
+in the late 90s, early 2000s.
+In the top left quadrant, you might
+have something where my price is set,
+but I don't select the carrier until the time of the tenders.
+So I might have a group of carriers
+who have agreed on a price, but I
+don't pick which carrier until the time
+of the tender of that load.
+That's less common, but it is out there.
+And then, the final one is where you have dynamic pricing
+in a private exchange.
+Or it could be a public exchange, actually.
+So the price is set at the time of the tender,
+and the selection of the carrier is that time of tender.
+So that's highly variable.
+So when you look at this, you have different percentages
+of the portfolio that a shipper will
+have in each of these tiers--
+the contract, where you're using the routing guide,
+some increased flexibility or the spot.
+And what you see is that a TMS should
+be able to handle all three of these tiers--
+setting up the routing guide, doing the procurement event,
+and managing off that routing guide,
+but also being able to escalate to that spot
+market for dynamic pricing in a private or public exchange.
+So this, kind of, summarizes the carrier selection process
+that should be handled within a TMS,
+and most large-scale TMS's do have this functionality.

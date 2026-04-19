@@ -1,0 +1,148 @@
+
+In this lesson, I want to move beyond Enterprise Resource
+Planning systems or ERPs into more specific supply chain
+applications.
+So let me talk about it through the evolution of these systems
+because interestingly, supply chain modules predate ERPs.
+So you can trace them back to the 1960s and 1970s, when
+IBM first developed what they called
+a bill of materials processor."
+Now, this was a mainframe-based system
+that used a relational database and was mainly
+used to track materials for large manufacturers.
+This was revolutionary because at this time,
+computers were just being introduced
+into large companies, into manufacturing
+and other settings.
+These were large mainframes, massive investments
+in terms of the hardware, and software
+was very much customized.
+Now, over the next several years,
+they've added in functionality, shop floor management,
+the closed loop functionality-- all those kinds of things got
+added and at the end of this time,
+there was a pretty standard MRP tool, Materials Requirements
+Planning.
+And this is essentially, as you recall
+from when we taught this in SE-2X,
+is a time-phased order release system, period.
+Now, in the 1980s, things continued to develop.
+There was more development from other companies
+and a product called MRP2 came out.
+And this was kind of an advanced or next step
+from the original MRP, thus the "2" indicator.
+And it's referred to as a "manufacturing resource
+planning system" as opposed to just "materials requirements."
+Now, what this did, this integrated production
+with finance and marketing because obviously,
+as we know now, how I produce and what I produce really
+can be influenced and impacted by finance and marketing.
+Now, this fit in with a new manufacturing methodology
+called JIT or Just In Time, where
+you have more frequent deliveries of smaller
+quantities.
+So it's much faster turn so you needed that integration.
+It also expanded ties to other functions, sales
+and operations planning, master production planning,
+capacity planning, et cetera.
+And this was the precursor of the larger, more
+comprehensive ERP systems that were
+being developed at that time.
+Now, in the 1990s, most of those MRP2 functions
+were absorbed into the larger ERP suites.
+As you'll see, what usually happens in software,
+they either grow in functionality,
+continue to grow, or they get absorbed by some other system.
+So the features that were in MRP2
+are actually core to ERP systems now.
+We also saw a lot of introduction
+of advanced planning systems.
+Now, they're always called "advanced" and "systems"
+but sometimes, it's called "advanced production
+and scheduling systems" or "advanced planning
+and scheduling systems."
+So I'm just going to refer to them all as "Advanced Planning
+Systems," APSes.
+Also, we saw introduction of a lot
+of function-specific optimization decision support
+tools.
+Now, optimization-based-- why were these suddenly coming out?
+Well, the cost of optimization plummeted in the 1990s.
+Also, the cost of computing-- we moved away from mainframes
+to minis to desktops.
+And so what you used to have to solve with a large mainframe
+could now be solved with something almost off the shelf.
+So you saw this proliferation of small niche
+and silo-specific optimization tools.
+And so this is when warehouse management systems,
+transportation management systems,
+manufacturing execution systems, inventory optimization,
+optimization-based procurement systems--
+all of these came out and they were usually
+startup individual companies.
+There were dozens to hundreds of these different companies
+developing these different decision support
+software tools.
+An important piece of it is that these were decision support.
+They were meant to be there to advise the decision maker,
+not to make the decision.
+Also in the 1990s, we saw wider spread adoption of ERP systems
+to smaller and mid-sized firms.
+It's not just for large, massive companies anymore.
+Mainly what drove this, interestingly, was the Y2K bug
+issues.
+Now, Y2K is something that a lot of people
+don't even think about anymore but this
+was a major concern of firms who used computer
+systems because the Y2K bug or the Year 2000 bug
+was a problem that people had for some initial systems
+where years were only treated as two digits.
+So you'd have 1979.
+You only recorded the seven and the nine.
+This works great until you hit a new century, right?
+And so there was a lot of work making
+older systems Y2K-compliant.
+It seems silly right now but it absorbed
+massive amounts of resources.
+In the 2000s, we saw an introduction
+of more web-based interfaces because the internet suddenly
+became much more amenable to enterprises.
+We saw improvements in communication, XML came out,
+and more recently, GPS positioning information
+for visibility, wider adoption of shared or cloud-based
+solutions--
+this is sometimes referred to as "software as a service"
+and we'll talk more about this in a later lesson.
+We saw consolidation of supply chain software vendors.
+All those individual companies that were popping up in the 90s
+either went away or they were absorbed or acquired
+by larger companies.
+So what happened is there's been an emergence over the last five
+to 10 years of supply chain management ecosystems
+or platforms and we'll talk more about that.
+And also, we saw an expansion of these ERP systems
+to essentially include all of these supply chain management
+functions.
+So what we're seeing is that this functionality can
+exist in many different places.
+So we talked about extending the enterprise from firm
+to firm to firm, where the CRM talks
+to the SRM and the supply chain management,
+they also interface.
+So you have this larger enterprise, this extension,
+and the systems that help you optimize this,
+they can be part of the ERP, they
+can be a standalone application, or part of some larger supply
+chain platform or ecosystem.
+And we'll talk where that falls in the decision making process
+when you're acquiring software in another lesson.
+But what I want to focus on in this lesson
+is the functionality themselves.
+And what I want to do is talk about some planning
+applications-- and I'll focus specifically on advanced
+planning systems--
+and then I want to talk about three execution applications,
+warehouse management systems, transportation management
+systems, and manufacturing execution systems.
+But before I dive into those, what I'd like to do
+is talk about the difference between planning and execution.

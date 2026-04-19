@@ -1,0 +1,75 @@
+INMA BORRELLA: As we mentioned in the previous segment,
+supply chain visibility is different from traceability
+or transparency.
+Supply chain visibility focuses on the three supply chain
+flows--
+materials, information, and finance--
+and integrates supply chain actors in a superior supply
+chain coordination.
+On the other hand, traceability focuses just on the product.
+Traceability views a product as a granular entity
+and traces back its components to their origin,
+involving information on where and how they were produced,
+by whom, and what was their impact,
+social and environmental, along the way.
+This information is relevant for companies, government entities
+because of regulations, NGOs because
+of the social and environmental impact, for consumers
+because they care about provenance, quality,
+and authenticity of the products they buy.
+This information about traceability
+is usually disclosed on a label attached to the product itself,
+such as the one that you can see in the slide.
+Transparency, on the other hand, refers
+to the information about the supply
+chain flows that is actually available
+and disclosed for anyone to check.
+A company may have a lot of visibility over its supply
+chain.
+But it will not be transparent until that information
+is published and accessible to relevant stakeholders--
+for example, through its ESG report.
+Another dimension of supply chain visibility is the scope.
+It is helpful to distinguish among internal visibility,
+one-up, one-down visibility, and end-to-end visibility.
+The greater the scope, the more difficult to achieve
+full visibility because more actors, processes,
+and systems are involved, increasing complexity.
+Internal visibility just involves
+the company's own operations.
+One example of internal visibility
+could be visibility over inventory,
+allowing to identify sources of shrinkage
+and to better serve customers.
+In order to achieve this type of visibility,
+internal visibility, internal barriers to information flows
+must be broken down.
+Often, critical data is kept inside organizational silos.
+For example, third-party aggregator data
+languishes in marketing, customer relationship
+management data in sales, production data in operations,
+and financial information in the C-suite.
+This hinders visibility and reduces opportunities
+to optimize operations.
+One-up, one-down visibility refers
+to the ability of companies to identify
+their first-tier suppliers and buyers.
+Expanding beyond the traceability of products,
+collaboration with direct suppliers and customers
+could improve visibility over operations.
+For example, companies could improve their planning
+if they had access to point-of-sales data
+from customers or to inventory levels
+at the suppliers' warehouses.
+End-to-end visibility encompasses all echelons
+in the supply chain, from deep-tier suppliers
+to end customers.
+An example of this type of visibility
+would be provenance, ensuring authenticity, safety,
+and control social and environmental impacts
+of a product from extraction of raw materials to point of sale.
+This is the most difficult type of visibility
+to achieve since supply chains are complex networks that
+span across different countries and involve
+a myriad of organizations with different capabilities, data
+standards, and information systems.

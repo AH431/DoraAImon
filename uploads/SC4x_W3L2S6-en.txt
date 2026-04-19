@@ -1,0 +1,109 @@
+
+With our last few minutes, we want
+to show you a quick, fun example of machine learning in action.
+And so, we're going to go to the Akinator, a web genie that's
+going to help us guess.
+So here we are in the Akinator.
+And the person I'm thinking of is Albert Einstein,
+and we're going to see if the Akinator can
+guess Albert Einstein.
+And the very first question up is, is your character a female?
+Now, what's the first thing we should be thinking
+about with this question?
+Well, if we have all the people and characters in the universe
+to guess, gender is actually a pretty good way
+to whittle that down, right?
+It's actually almost half of the characters
+and people would be female and half of the characters
+and people would be male.
+So this would get us from 100% of our sample space
+maybe down to 50% of our sample space.
+So this is a really excellent discriminating question.
+So I'll answer it.
+Albert Einstein is male, so the answer is no.
+
+So the next question up is, is your character a YouTuber?
+And this is probably a good way to discriminate
+among living people--
+maybe living and dead people.
+So you can imagine, this probably
+is a good early question, especially
+for people who are using the web for this type of game.
+And so, Albert Einstein is not a YouTuber, so I'll answer no.
+Is your character older than 20?
+I guess the answer for this is yes,
+because he was older than 20 when he died.
+And the next question says, is your character
+linked with sports?
+No.
+Does your character really exist?
+Yes.
+Has your character recorded any albums?
+No.
+Did your character die?
+Yes.
+Is your character American?
+That's a good question.
+He wasn't originally American, but he became American.
+So I'll put probably.
+Has your character been dead for more than 100 years?
+No.
+Does your character hunt ghosts?
+No.
+Has your character been dead for more than 20 years?
+Yes.
+Is your character connected to dinosaurs?
+No.
+Is your character white?
+Yes.
+Is your character a scientist?
+OK, we're getting there.
+Yes.
+Is your character an elephant?
+No.
+Does your character have white hair?
+Yes.
+I think that's the canonical picture of Einstein.
+Has your character allowed a major scientific breakthrough?
+Definitely.
+Is your character Australian?
+No.
+Does your character have messy hair?
+I think we're getting there, so I'll say yes.
+And he got it.
+So in 19 questions, we will answer yes
+to tell them that we did get--
+that they did get us correct.
+So hopefully this is a fun way for you
+to see some machine learning in action.
+The game 20 questions was a favorite of mine as a kid.
+And one thing to notice I think generally
+here is that we went from least specific question
+to most specific question in that form.
+We definitely went down some tangents.
+They thought we might be a YouTuber--
+that we might be thinking of a YouTuber,
+that we might be thinking of a sports star.
+So all those types of things were really big tangents
+or branches down a tree that might have led us
+to the right personality had he not been a scientist.
+Finally, what happens if Akinator
+can't find our character?
+When you do it yourself, if you'd like to,
+you might see that it happens sometimes.
+You'll think of somebody and it will
+take a whole lot of guesses.
+And what will happen is after a while the Akinator will
+say, well, why don't you just tell me who it is?
+And in that case, what they do is they remember
+all of the different branches that you took
+and all of the different answers you went down,
+and then they can add that new character to the network
+that they have of possible answers.
+So this is an ever-growing resource
+of different questions and answers
+leading to different personalities
+and characteristics.
+With that, we'll wrap up this lecture here.
+And go ahead and work on the quick questions and also
+the practice problems.

@@ -1,0 +1,217 @@
+
+The first execution system I want to talk about
+is the TMS, or transportation management system.
+Now, a TMS is a suite of software
+that facilitates the procurement of transportation services.
+It facilitates a short term planning and optimization
+of transportation activities, assets, and resources.
+And it facilitates the execution of those transportation plans.
+So this is one of the areas where procurement is actually
+part of transportation.
+It isn't always in a centralized procurement function.
+So TMS over the last 15, 20 years
+have really owned that side of the procurement.
+That isn't that common in different functions.
+And so when I talk about short-term planning
+and optimization, we'll give an example of that.
+But a lot of that is the load building kind of things.
+And this is where you might be optimizing
+not over a long range plan, but tactically for a week,
+or for a month.
+And then the execution is where we're
+going to focus on the most.
+Now, TMS's are typically segmented or specialized.
+You'll see some that are mainly for domestic transportation,
+and others that handle international,
+because they have very different requirements.
+Going international means you have to start
+thinking about customs, you have to think about you're
+limited in some of your options, because it's either
+ocean or air.
+And so it's a different set of questions
+that you have to answer.
+Domestic is usually a little easier,
+because you don't have as many issues with border crossing.
+And they also see them segmented by mode--
+ocean, air, rail, full truckload,
+less than truckload, parcel, private fleet.
+Believe it or not, a lot of times shippers
+will have different systems for each.
+Now it seems kind of silly when you just have one TMS,
+but in reality, people working on the ocean side
+have nothing to do with people doing the less than truckload
+delivery local.
+Now, it's very important they have the same database
+so they see the same shipments.
+But the actual application that helps them manage the ocean
+transportation versus say the parcel,
+there's very little overlap in as far
+as actual daily execution.
+Again, they'll have a common database
+so they see the common customers and so they have visibility,
+but the interfaces will probably be very different.
+So the core functionality, and not all systems
+have all these things, because not all shippers
+need all of these--
+you can think of having transportation procurement.
+This is a very common add-on function to a TMS.
+It helps them decide which carriers to use on which lanes
+or which routes for the next time period-- usually a year.
+They'll have mode and carrier selection.
+And this can be used both tactically and in real-time
+for execution--
+so when I have this one load, which carrier do I use.
+Or the mode selection is usually done
+a little further in advance.
+It handles all carrier communication,
+whether that's through EDI transaction
+sets, or through XML, or web-based,
+or some other system.
+It handles what's known as a routing guide.
+It generates this and maintains it.
+Now, a routing guide is simply a list of those transportation
+providers or carriers that I will use on a certain lane.
+That's all that it is.
+It's usually included in the TMS electronically,
+and we'll see how that's actually used.
+But the routing guide is a key component of a TMS.
+They might have fleet management.
+If you own your own trucks for example,
+you want something that helps you manage them, and determine
+when do I want to use those, how do
+I route those-- kind of like your own fleet.
+And so not all companies have their own fleet,
+so that's usually an additional module.
+Most TMS's will handle the audit and payment and claims.
+They'll handle appointment scheduling, yard management--
+that's the movement of trailers and containers
+within your own equipment yard.
+And they'll handle route planning.
+Should I do a multi-stop move where
+I have different loads in one trailer
+and I drop them off at different destinations,
+or pick up on different origins?
+Or do I do a continuous move where I drop off
+and I pick up at the same location for a follow on load?
+So these are the core functionalities.
+There's a lot more, but these are the core things.
+And it's all about managing the interface between your company
+and the carriers.
+I like to think of it as connecting also
+procurement to execution.
+So think if you're going to run a strategic bid,
+figure out which carriers you're going
+to use for your network that feeds into a routing guide
+that I will use in real-time.
+And when the routing guide fails, for example,
+if the plan doesn't work-- the carrier plan I'm using
+isn't there--
+then I'd go to something called a spot market.
+So this has been in use for many years now.
+And so in other industries in other areas,
+we call the strategic bid a reverse auction,
+the routing guide is known as an electronic catalog,
+and the spot markets is known as a public and private exchange.
+But in transportation, it has these very specific names.
+So you set up the bid for your contract rates.
+Your routing guide helps you execute them.
+And when that plan fails, you go to the spot market.
+You can also think of the TMS as tying together your companies
+order management system--
+your OMS-- with the payment systems, and then the ERP.
+And it also serves as that interface to the carriers--
+the bridge to your carriers.
+And the objective is to move products from initial origin
+to final destination in the most cost effective manner while
+meeting level of service.
+And what we do is we execute the plan using those carriers
+that we procured based on whatever
+real-time information we have.
+You can also think of it as transforming an order
+into a completed shipment.
+So TMS's usually operates in four phases.
+There's a planning phase where orders come in
+and you turn those into shipments, an execution phase
+where you actually select and tender to a carrier
+and then the shipments become accepted shipments.
+While it's in transit, you're monitoring them,
+you have the visibility of the status of those shipments.
+When they get delivered, their completed shipments and you
+reconciles.
+The reconciles auditing and making sure any accessorials
+are taken care of.
+You pay for the transportation.
+So it's a whole life cycle of an order
+from being dropped from the warehouse
+to final delivery and payment.
+
+Some things you might want to think about or consider when
+you're looking at TMS's, you really
+need to understand how your company operates.
+How do orders drop?
+Do they happen at night in one big batch for the next day?
+That's very common for a lot of distributors.
+Or do they happen throughout the day?
+Are the continuous?
+This changes the way that you'd want to operate your TMS.
+How much time is allocated between the drop of the order
+and the must ship-- this is the lead time?
+Do you have weeks, days, hours, minutes?
+As you have more time, you can do more with it.
+But in a lot of situations, your time
+is very compressed with very short lead time.
+You need to know what percentage of orders
+change after they're released.
+How do they change?
+Does the quantity go up or down?
+Do the destinations change?
+Do they disappear?
+Because that helps you understand what you can plan
+tactically and what you can't.
+What's the length of haul?
+Are these longer movements?
+Or are they really short local movements?
+You'll probably procure them very differently.
+And how many orders are in play at any one time?
+Is it one at a time?
+Or do you have a whole batch to work with?
+Because as a general rule, as I have more time and more orders
+to play with, I'll come up with a more efficient way
+of transporting those--
+of consolidating those.
+As my lead time shrinks and the number of orders
+that I can play with shrinks, than I have fewer options.
+So what I'm going to now is go into two key decisions,
+load building and carrier selection.
+Load building is pretty straightforward,
+and we've talked about these different mode
+selection and carrier selection techniques.
+So essentially, you can think of the situation here.
+I'm in Kansas City and I've got six destinations to go to.
+And you can see the requirements for each one
+in terms of pounds.
+And so I have options here.
+And my first option is to not build
+anything-- go direct LTL to each one of those destinations.
+And I can figure out the cost of those.
+Or I could do a multi-stop, where I drive to St. Paul,
+drop off that 15,000 pounds, and then work my way
+down the east coast.
+Or I could do an option where I go straight to St. Paul
+and go to a pool point.
+And at this pool point, I do local delivery
+out for those four destinations for local LTL,
+and then down to Atlanta for the final delivery.
+So you have all these different options
+you can use for load planning.
+And a TMS will help you decide which one to do.
+This is more of like the tactical planning.
+Again, this is where I have a batch of orders
+that I can combine into different shipments.
+If I have one at a time and I've got
+to make a decision in real-time, you
+have less opportunity to do this load consolidation,
+or load building.
+So this is one of the key components of a TMS--
+that load building or consolidation capabilities.
+Next, I'll talk about carrier selection systems.

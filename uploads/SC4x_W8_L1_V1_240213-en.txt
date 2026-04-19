@@ -1,0 +1,37 @@
+INMA BORRELLA: Hello.
+My name is Inma Borrella.
+And I will be your instructor for this lesson.
+In this lesson, we're going to introduce the concept of supply
+chain visibility.
+Supply chain visibility gives organizations
+mastery over their environment.
+For example, it allows companies to identify and predict
+changes in demand, supply shortages, or transportation
+disruptions.
+This information enables more responsive and agile operations
+rather than just reacting to unexpected events.
+It also allows companies to trace their products
+and components from cradle to grave,
+ensuring control over provenance,
+preventing counterfeit, enabling compliance with regulations
+and ESG requirements, and even facilitating reverse logistics
+and circular economy models.
+I know this all sounds great.
+But achieving supply chain visibility is not an easy feat.
+Recent surveys show that most companies do not
+have a fully mapped supply chain network.
+And visibility beyond Tier 1, Tier 2 suppliers
+is rare to find.
+Lack of collaboration, data sharing, and technology
+integration are some common challenges
+to end-to-end visibility.
+In this lesson, we will clarify the terminology
+around supply chain visibility and propose
+a simple definition.
+Then we will introduce a framework
+to implement and evaluate supply chain visibility initiatives.
+And we'll discuss relevant technologies
+for supply chain visibility.
+Finally, we will wrap up with some strategic considerations
+and key takeaways from the lesson.
+Let's get started.

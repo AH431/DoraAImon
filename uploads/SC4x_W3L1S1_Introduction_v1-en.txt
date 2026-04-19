@@ -1,0 +1,34 @@
+
+Hello everyone.
+Welcome back.
+This week we'll be covering some additional database topics.
+These topics are going to be different
+than the core database content that we've
+covered to date which includes data modeling, normalization,
+how to actually select data and insert data and delete
+data from databases, and how to join tables together.
+These topics are going to help us
+learn more about how databases are applied in the real world.
+So the first motivating question that we'll think about was,
+how can relational databases be optimized for performance?
+Performance is a really big deal in databases,
+so we're going to think about how
+to index database attributes.
+And we're going to think about the consequences
+for performance based on the types of database use
+that we want to do.
+The next thing we'll think about is,
+when is a normalized relational database--
+the types of databases that we've shown you so far--
+not the most ideal solution for storing and retrieving
+your type of intended data?
+So we'll think about NoSQL databases
+and non-relational databases.
+The next topic that we'll look at
+is what are the benefits of storing data and processing
+data on the cloud.
+Finally, we'll think about how to preprocess and clean
+our data sets before we put them into databases.
+This skill will be really essential for us to make sure
+that we actually store and retrieve reasonable data
+every time we use our database.

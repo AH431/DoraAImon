@@ -1,0 +1,225 @@
+
+So let's try to answer the why question.
+Why do companies have or use ERPs?
+And we'll do this by looking at the benefits and the drawbacks.
+So let's take an example.
+Let's suppose I've got a company, a manufacturer.
+And let's see how a sales transaction would
+work if I did not have an ERP, one
+of those centralized systems, and I
+had instead each function within the firm
+has its own siloed database.
+So what would happen?
+This is the business process function for a sales.
+So a customer usually contacts someone
+in the sales group and requests a certain quantity
+of a certain product or lines of product by a certain time.
+And so sales needs to go and say, OK,
+do we have this on hand?
+Do we have it in inventory?
+Now, if they don't have access to that database,
+they probably have to call or somehow email
+or somehow contact the people in the inventory group.
+Now, they might have, in the sales group,
+a daily update of what was on hand,
+or maybe a weekly status report.
+But it's not real time.
+So they're going to have to contact and reach out
+the inventory people and see what they have on hand.
+So they check with inventory, and it turns out
+they don't have sufficient inventory for this order.
+What does the sales guy do?
+Well, the process would probably have them then
+go to production.
+Can we make it in time to satisfy the customer?
+So now production, they'd have to check with them,
+check their own internal schedule.
+Also, they would have to check inventory themselves
+to see if they have sufficient raw materials or components.
+They would also have to contact human resources,
+because maybe they would have to add a new line
+or use extra labor.
+So perhaps at that point in the process, production
+would get back to sales, say, you know what?
+Yes, we can make that happen by the time you need it.
+So sales says great.
+They can confirm that.
+And then they have to go to the distribution,
+to people who handle the warehousing, the transportation
+for the actual distribution of the product out,
+and coordinate that, make sure that they can actually load
+and transport the product in time.
+And then finally, the sales can get logged in finance.
+And then the customer can be notified of all this
+by the sales guy.
+So you see what happens here.
+There's a lot of latency.
+There's a lot of redundant checking,
+because no one has real time access to each other's data.
+You might have a static report or an outdated report,
+but you need to physically call each other to find out what
+the actual current status is.
+Now let's compare this if we had a centralized ERP.
+So you have the same functions here,
+and the process would be a little bit different.
+Sales could immediately go into the ERP
+and see the status of inventory.
+They could do this while they're on the phone
+or communicating with their customer.
+They could see that it's not there.
+They could check production planning, the production
+schedule, and look at the availability to promise,
+and see if that has sufficient room for their product
+for their customer's order.
+Check with that, and they could immediately check and see
+if distribution has sufficient capacity as well
+for the transportation.
+And it could be logged into finance.
+So look what an ERP system does.
+It allows the collective data to be in one repository.
+It allows for instantaneous availability and use
+of that data across the company.
+So pretty powerful.
+So let's do some benefits and drawbacks.
+Well, some of the benefits came out
+from our very simple example.
+And so we can say that an ERP allows
+an enterprise, a company, to organize, codify,
+and standardize their processes and data structure.
+This is important, because now I have the same structure
+across the company.
+In the previous siloed environment,
+I might have a very different data structure
+in each one of my functions.
+So having it standardized makes it easier
+to interchange between the different functions.
+Also, notice that we're standardizing not just
+the data, but the processes.
+That's critical.
+And that's a double-edged sword.
+And we'll talk about that in a second.
+But by standardizing the processes,
+it makes it easier to replicate that and use
+that in other parts of the organization.
+Because if everyone processes, say, an order the same way,
+then you won't have to treat the orders coming in from, say,
+Latin America different from North America,
+different from Europe.
+You treat them all the same if we have a standardized process.
+It allows us to integrate those pockets of information
+into a single unified repository,
+because pockets of information tend to make things redundant,
+and they're not always in sync with each other.
+An ERP allows us to make data instantaneously
+visible and available across functions
+for immediate decision making.
+Think of what that sales rep has at their fingertips
+to be able to make these decisions.
+It allows you to eliminate redundant or alternative
+management systems and data.
+Think of all the redundant data that
+was stored in all those different siloed databases,
+because each of them would have to have
+some kind of, say, master data on the materials, on the SKUs.
+And I guarantee they wouldn't be synced, necessarily.
+So it gets rid of those redundancies.
+It also reduces the amount of non-value-added tasks,
+such as data entry.
+Something is entered once into the system, it's in the system.
+You don't have to enter in multiple points.
+And you can take advantage of best practices
+in the standard processes.
+So if you use one of the leading ERP vendors,
+one of their systems, then you have
+a library of potential best practices that you could adopt.
+And that's something that a lot of companies
+really benefit from, especially smaller-sized ones
+where they're looking for better processes to scale with.
+And paradoxically, it can allow you to be more flexible.
+This seems very strange, but it's a great observation.
+And I've noticed this when I was implementing software back
+in the late '90s, early 2000.
+And that is that standardization of anything
+can lead to increased flexibility
+and sometimes increased creativity.
+Because what you're doing--
+you're channelizing or channeling the standard,
+so you're focusing your efforts.
+Standardization means that we're doing things in a certain way,
+so everyone is used to setting up their process.
+It's easier to change an established process
+than to change a process that's not standard.
+It's loose, and it differs from place to place.
+So standardization makes it easier
+to influence something new, which
+increases its flexibility.
+It doesn't make sense at first, because you
+think if it's standardized, that it's fixed and rigid.
+Actually, it's not quite the case.
+Because we actually see this when
+we talk about communications, too,
+where we have EDI or Electronic Data Interchange.
+The transaction sets are very rigid,
+but it forces you to be creative elsewhere.
+You're not going to be creative in what
+goes in each of the different buckets in the transaction set.
+So a lot of benefits for having an ERP.
+There are some drawbacks.
+So adopting and using ERP is very costly,
+and is very time-consuming, especially
+for the implementation.
+We'll talk about that in a future lesson
+about software implementations, because that's
+a whole lesson in itself.
+It also allows data errors to potentially ripple and be
+replicated throughout the system.
+Remember, if one piece of data is put in incorrectly
+at one place, it's the only source of data there.
+So that could ripple through.
+And so you don't have these redundant databases which
+prevent rippling of errors.
+They're more like bulwarks.
+In this case for an ERP, all the data is in there once,
+so it could have a rippling effect.
+You can also limit your competitive advantage
+by forcing the use of the standard--
+might be best practice processes.
+Because the best practice for one
+company might not be the best practice for your company.
+But if you have these standard processes,
+then you might be forced to do something that really
+doesn't make sense for your company, or changes you the way
+that you operate.
+So that can either be a good thing or a bad thing.
+And a lot of times, when we talk about implementations,
+part of the implementation process
+is changing the organization to fit the processes that
+are embedded into the ERP system, which
+is kind of backwards.
+But that's part of the implementation process.
+Having an ERP, because they're such massive systems,
+can make a firm reliant on a single vendor
+to support these mission-critical systems.
+It can lead to a shortage of personnel
+with a technical knowledge of the system.
+And it can result in a very high cost of system downtime
+due to the wide impact.
+Think about this siloed system.
+If one of those databases went down,
+it would affect that function.
+Here, it's affecting everything.
+So as you get more connected, there is a little bit of risk
+there, especially through error replication as well as
+potential downtime, because you have such wide impact.
+So these are the benefits and the drawbacks of ERP.
+Generally, most companies find the benefits
+outweigh the drawbacks.
+And in fact, more recent versions of the ERP--
+and we'll talk about these a little later--
+are addressing each of these.
+And so they're trying to make them
+less costly and time-consuming to implement, better ways
+to introduce redundancy to minimize that error ripple
+effect, and all of these other things.
+So there's always improvements to the different ERPs,
+but these are the major benefits and drawbacks.

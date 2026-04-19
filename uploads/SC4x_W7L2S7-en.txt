@@ -1,0 +1,44 @@
+
+So the last execution system I want to talk about
+are MESs, or manufacturing execution systems.
+Now these have been around since the 1990s,
+just like TMSs and WMSs, but they're not as common.
+And it's a very fragmented supplier base,
+because they're all a little bit different
+based on the company, the manufacturer.
+And a lot of the functionality is actually
+being absorbed straight into an ERP.
+But they're still out there, and I just
+wanted to touch upon it briefly.
+So, essentially, an MES is a software system, or a suite,
+that manages and monitors all the work in process,
+or the WIP, in a production.
+So this includes integrating with the ERP
+to manage the execution of release of production orders
+to finished goods, trigger supply chain replenishments,
+and enhance the product traceability
+through that manufacturing process.
+So some of the functionality, it deals with machine scheduling,
+you've got the process management, document control,
+the labor management within that manufacturing process,
+the inventory management of the WIP, the tracking of that WIP,
+a performance analysis-- similar to like what the WMS does
+in the warehouse, this does in the manufacturing platform--
+the quality management in the production reporting.
+So the MES, it's an important component, but,
+what's interesting, is it's more of an internal facing system.
+It's not usually connected to any part of the larger supply
+chain network.
+So while the TMS is tied to the vendors, as well
+as the carriers and your customers
+because it's the bridge.
+And the WMS connects, because it receives from external
+and ships to external partners.
+Those are more external facing.
+They deal with entities outside the firm.
+An MES is just the opposite.
+It's really dealing within the firm,
+and it interfaces with the ERP.
+It might tie into the MRP and some of the production planning
+systems, but it's really that execution element
+of the manufacturing process.

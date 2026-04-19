@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\queueing.py", line 856, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\route_utils.py", line 358, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\blocks.py", line 2192, in process_api
+    data = await self.postprocess_data(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        block_fn, result["prediction"], state
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\blocks.py", line 1964, in postprocess_data
+    await processing_utils.async_move_files_to_cache(
+    ...<3 lines>...
+    )
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\processing_utils.py", line 601, in async_move_files_to_cache
+    return await client_utils.async_traverse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        data, _move_to_cache, client_utils.is_file_obj_with_meta
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio_client\utils.py", line 1157, in async_traverse
+    return await func(json_obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\processing_utils.py", line 572, in _move_to_cache
+    _check_allowed(payload.path, check_in_upload_folder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\processing_utils.py", line 517, in _check_allowed
+    raise InvalidPathError(msg)
+gradio.exceptions.InvalidPathError: Cannot move C:\Users\archi\Downloads\20260419_供應鏈可視性兩小時奪100分.md to the gradio cache dir because it was not created by the application or it is not located in either the current working directory or your system's temp directory. To fix this error, please ensure your function returns files located in either the current working directory (C:\Users\archi\OneDrive\Desktop\DoraAImon), your system's temp directory (C:\Users\archi\AppData\Local\Temp) or add C:\Users\archi\Downloads to the allowed_paths parameter of launch().
+^C

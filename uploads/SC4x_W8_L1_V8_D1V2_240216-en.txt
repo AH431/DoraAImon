@@ -1,0 +1,58 @@
+INMA BORRELLA: Let's discuss in this section
+some strategic considerations for supply chain visibility--
+namely, technology and collaboration.
+Technology is an essential ingredient
+to achieve supply chain visibility.
+But it is not the only part of the equation.
+Often, visibility has been conceived
+as equal to the technology that will provide visibility.
+This is far from being true.
+And it is a dangerous path that can take you
+down the rabbit hole pursuing one technology after another
+in the search for the holy grail of visibility.
+The recipe for supply chain visibility
+includes data availability, collaboration with supply chain
+partners, the right corporate culture,
+and organizational design.
+In our research, we have observed three common pitfalls
+when trying to digitize the supply chain--
+first, the Frankenstein effect, which
+means trying to address problems with the specific
+isolated technologies that often don't go very well together.
+The second one-- technocentrism, choosing the technology first
+and then looking for a business application for it,
+mainly driven by the hype of the moment.
+And the third one is unscalability, the inability
+to expand beyond pilot stage because of resistance
+to change or other reasons, which
+are often organizational and not technical.
+
+Collaboration is essential to ensure
+the success and continuity of supply chain visibility
+initiatives.
+Internal collaboration across departments and functions
+is often overlooked or taken for granted.
+But organizational silos are still a common place.
+And the interconnections and trade-offs
+between supply chain management and other functions
+are not always well understood.
+For example, a better service level
+will almost always come at a higher operational cost.
+External collaboration with supply chain partners
+is also key.
+Agreements for confidentiality and data sharing
+must be put in place.
+And common standards for data must
+be developed and implemented.
+Not all tiers may have the capabilities to contribute
+to visibility in the same way.
+So investing in improving these capabilities for key partners
+may be necessary-- for example, when we're talking
+about deep tier suppliers.
+Finally, boundary-spanning managers will play a key role.
+Boundary spanners build bridges across organizations.
+They understand the importance of collaboration,
+can empathize, negotiate, and develop the right incentives
+to promote data sharing and data standardization among supply
+chain partners as well as measure the gains
+from these collaborations.

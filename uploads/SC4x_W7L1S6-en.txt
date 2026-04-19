@@ -1,0 +1,175 @@
+
+OK, so we've talked about what an enterprise resource planning
+system, or ERP, is, what the different components are,
+why a firm would adopt it, the data
+requirements, the communication standards,
+and really discussed how it's used on a transactional basis.
+However, there's a lot more to an ERP.
+It can serve as the basis or the platform
+from which a company can really improve their strategic value.
+So let me talk in this short video segment about three
+opportunities where ERP's can really assist
+in this added strategic value.
+The first one is reducing the Bullwhip Effect.
+Now we've talked about the Bullwhip Effect
+in many different of the classes.
+And as we all know, it's the effect
+where the demand is magnified and has greater amplitude
+and oscillation as I move upstream.
+So as I move from a customer where the demand is relatively
+stable, moving upstream to the retailers,
+I get more oscillation and higher amplitude.
+And it gets even worse as I move up to distribution centers,
+to manufacturing, and so on.
+And while the average demand stays the same, the oscillation
+around that, the variability increases dramatically
+as I move upstream.
+And we've talked about why this happens.
+They are behavioral causes.
+It's mainly due to people, right?
+We tend to overreact to backlogs, we do panic ordering,
+order twice as much as we need because we know we'll only
+get half of what we order.
+So all of these behavioral things,
+miscommunication, lack of transparency.
+And then there are some operational causes.
+Whenever you have demand forecasting errors,
+that could amplify the Bullwhip Effect.
+Having variable lead time does the same thing.
+Having a forced lot sizing order batching,
+which makes sense for economies of scale, right?
+If I have a minimum order quantity
+or a full truckload requirement, there's
+a reason why it's there.
+But the downside is that it induces the Bullwhip Effect
+to some degree.
+And I could also have gaming, when there's
+a shortage in promotions.
+All of these things can lead to the Bullwhip Effect.
+So what does an ERP do?
+Well, it really can mitigate some of these things.
+So because it has that extended visibility
+and it has a common database, one version of the truth,
+then it really minimizes some of those behavioral causes.
+You have this quote "trustful collaboration"
+that it engenders your point of sale data that's visible now.
+And so that takes care of some of that lack of transparency.
+And there's greater information sharing.
+So this can actually mitigate some of the Bullwhip Effect,
+having an ERP system.
+In fact, some studies have shown that over the last 10 to 15
+years since this effect was really brought out,
+as ERP's become wider spread, the Bullwhip Effect
+actually is getting mitigated.
+And it's mainly because of that one version
+of the truth shared database.
+So this is one example.
+So another is that an ERP can enable advanced analytics.
+So think about ERP systems.
+They're primarily financial, so they're really backwards
+looking.
+They're retrospective, they're telling me what has happened.
+So the general ledger of the firm, it's all historical data.
+And it's really there to provide the CFO
+with a financial snapshot at particular times.
+However, we can use that data for other purposes.
+And this is where business intelligence comes in.
+And it's really blossomed over the last 5 to 10 years.
+And it's where you transform this raw data into information
+that you can use to improve your decision making.
+Now there are many different analytical packages
+out there and models.
+And they really fall into these three categories
+that should be very familiar to you if you've taken SC0X.
+That is, you have descriptive models
+that can come up and explain what has happened.
+And ERP's have always been good about this,
+because they're backwards looking.
+They're good at reporting, getting scorecards,
+benchmarking, things like that.
+What's new is they're being used for better predictive models.
+What could happen.
+So as I mine what has happened, I
+can start projecting that forward.
+And there's been a lot of work in machine
+learning to try to work on that and improve that.
+And that's why we introduced machine
+learning into this course.
+And then, finally, a prescriptive.
+What should we do.
+And this is all the optimization and algorithms and simulation
+models that we've talked about in previous courses.
+It helps us determine the what ifs.
+And when we talk later about supply chain planning systems,
+they really build off this ERP and help us do that what should
+we do.
+It answers that question, a lot of what if analysis.
+So the ERP essentially enables this advanced business
+analytics within a firm.
+OK, the third one I want to talk about
+is extending the enterprise.
+So far we've talked about ERP's as being used within the firm.
+That's what they were designed for.
+They were designed to bridge the gap between finance
+and operations essentially, really tying those things
+together within the firm.
+Because it's hard to imagine 30 years ago how
+separate and siloed organizations were.
+We take it for granted now that there's such visibility,
+but it wasn't always there.
+So that's the reason why ERP's were developed.
+But we can also use this as a platform
+to extend beyond our four walls of our own firm.
+Because companies are increasingly
+relying on their trading partners
+to improve their whole supply chain.
+So how does this work?
+Well, you can think of the ERP as connecting one to the other.
+And you create this larger business network.
+Because just as you can provide one version of the truth
+within a company, you can start providing
+one version of the truth along your supply chain.
+And a lot of retailers do this by releasing
+their point of sale data to their trading partners.
+So this reduces the needed coordination monitoring costs.
+As that cost goes down, you can do more of it,
+and you're able to respond much more quickly.
+Any signals that are received by the ends of that network, so
+think about the Bullwhip Effect.
+When you have something happening at the retail level,
+you don't wait for it to ripple through,
+you understand it right away.
+So the ERP can really be used to extend this network.
+And the way it does that is by introducing different modules.
+And we'll talk more about these in the next couple of lessons.
+So if I've got my ERP here, what happens
+is over the course of years different modules,
+specialized modules, have come up.
+Let me talk about each of them very quickly.
+At the top, we have the product lifecycle management.
+This is all about managing the launch and lifecycle
+of a new product.
+CRM is customer relationship management.
+SRM is supplier relationship management,
+how you work with your customers and your suppliers.
+And then there's a whole supply chain management
+suite of modules.
+Now some of these, like CRM and SRM,
+I've talked about before that they're part of the ERP.
+And they can be, but sometimes they're stand alone.
+But the idea of using the ERP to extend the enterprise,
+you just have to think about how one company's CRM is
+going to interface with the next company's SRM and vice versa.
+So the whole idea here is these ERP's are now
+moving beyond the four walls of a firm
+to think about extending that enterprise
+along the whole supply chain.
+And so the visibility of data, and the one version
+of the truth, gets even longer and longer
+along that supply chain.
+All right, so this concludes what
+I wanted to talk about for ERP's or enterprise resource planning
+systems.
+Please watch the videos, watch the interview videos,
+use the quick questions, the practice problems.
+And have fun.

@@ -1,0 +1,169 @@
+
+So let's continue our discussion of ERP basics
+with talking about data for just a little bit.
+So there's a lot of data, obviously, in an ERP system.
+That's one of its main objectives,
+to be that central repository of all data.
+And we can divide these data into three general types.
+Now, every ERP is going to be a little bit different,
+but this is a general classification.
+You're going to have some kind of organizational data
+that represents the structure of the firm or the enterprise.
+You're going to have some kind of master data
+that represents what's known as entities.
+And these could be customers, vendors, or material.
+And these are things that are associated
+with specific processes, such as production, sales,
+and so forth.
+And then you've going to have transactional data.
+And this reflects the consequences
+of executing some kind of process step.
+If I make a sale, if I move material,
+that generates a transaction where something happens.
+Some process was triggered at a certain time,
+at a certain location, for a certain purpose.
+And so these are tied very much to business processes.
+You can think about a business process as something
+that's executed in the context of an organization--
+we need to know the organization--
+using master data.
+And it results in a transactional record.
+So processes and transactional data or transactional records
+are very closely intertwined.
+So let me talk very briefly about each
+of these three types of data.
+So organizational data-- again, this
+captures the structure of the enterprise.
+And examples can include companies, subsidiaries,
+factories, warehouses, storage areas,
+sales regions, you name it-- any way
+you're going to divide your organization.
+So here's a fictional company, ABC.
+This is the enterprise.
+And it has two subsidiaries--
+North America and Latin America.
+And then North America has three facility plants,
+and Latin America two DCs.
+So at the client or enterprise level--
+that's the highest level--
+this is, for the ERP, the universe.
+So the universe would be contained within this client
+or enterprise level.
+Now, this can consist of more than one company or subsidiary,
+but they all fall up to one enterprise.
+At the company level, each of these-- a good way
+to think about this is that they're
+separate legal entities.
+That means they have to file their own financial reports.
+That's the definition of what this company level would be.
+Now, they can only belong to a single client or enterprise.
+I can't have a company belonging to two enterprises.
+So what we're creating here is this tree structure.
+And then down to the plant or facility level, each of these
+is a specific facility or a set of facilities.
+I could have this be the northeastern plants,
+for example.
+And this is where products are created,
+or material is stored for distribution,
+or production planning occurs, or where
+service or maintenance is actually
+conducted or performed.
+Now, a single facility--
+say a large business complex--
+might have multiple plant codes.
+It could be, for example, a distribution center
+has three or four segments, and they have different codes.
+One might be the cross dock area.
+One might be the [INAUDIBLE] pick.
+And so you could segment it.
+Now, they can only belong to a single company,
+so I can't have a DC belonging to North America and Latin
+America.
+Now, what I could do--
+if it's the same physical facility,
+I could divide it into whatever components--
+in half or whatever-- and assign different codes to them.
+But it's important that you keep this structure, this tree
+structure.
+There's no crossing.
+Everything rolls up to one.
+So that's the organizational data.
+The master data represents all those entities
+used in processes.
+Remember, I said an entity could be a vendor,
+could be a customer.
+And most typically, it's the material, the product.
+This is the most commonly used master data
+file out there, the SKU master data
+table, the raw material master data table.
+And now different processes will use these materials
+differently.
+This is what makes it really complicated,
+because it's not really one set of data.
+Different processes will need different views
+or different perspectives on the data.
+We don't need everything for every process.
+So when I'm looking at this material master
+and I'm in the Warehouse Management System, the WMS,
+I care about certain things.
+I care about the packaging, the cube, the weight,
+things about the physical size to put it away.
+When I'm looking at sales data, that
+doesn't concern me as much as the sales
+price, the discounting policies, things along those lines.
+So every different process will have a different perspective
+or view of the material master.
+Now, the other interesting thing is
+each of these materials have different types.
+You can think of many, many different types.
+Different versions of ERPs have different categories,
+but they all have the three big ones--
+raw materials, semi-finished goods, and finished goods.
+These are like classic definitions.
+Now, you'll always have more, finer-detailed ones,
+but you'll typically have these three big ones.
+And then you might also have something
+called material groups.
+And this is where I can collect different materials
+into a similar or similarly-used set of items.
+So for example, if I'm manufacturing bicycles.
+I might have a set of material that's used for a certain bike.
+I can classify that as a group.
+Or I can classify, say, a certain type of bicycle--
+say mountain bikes versus road bikes.
+I can make separate groups for those.
+And it's just a convenience.
+So if I wanted to order based on an increase in sales
+in a certain type or category, it'll
+apply to all the products within that collection.
+And there's just terms that you do for the master
+data for materials.
+The third type is transactional data or transaction data.
+And this, again, reflects the consequences of a business
+process being executed.
+And it's a combination of the two other types
+of data-- the organizational, the master,
+as well as the situational.
+So a certain organization is moving product from Plant 1
+to Plant 2.
+I need to know the material that's being involved.
+And I need to know who, when, and where.
+So this puts a time stamp on it.
+And so now it's actually something that happened.
+It's an action.
+And so there's two types of documents
+you can think of here.
+One is a transaction document that
+is used external to the ERP.
+Think of a purchase order or an invoice.
+This is something that lists something that happened.
+It's recording a movement of goods or a sale of goods as
+opposed to a virtual document.
+Anytime I do a financial transaction,
+that will create a transaction internal to the system.
+I might want to print those all out, but very rarely.
+And so there's two ways you can think about this.
+One is those virtual documents, those internal transactions,
+whenever I do something in my ERP,
+versus a document that I'm going to use for external purposes--
+purchase orders, invoices, things like that.

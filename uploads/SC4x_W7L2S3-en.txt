@@ -1,0 +1,170 @@
+
+Now let's talk about advanced planning systems.
+By this point, advanced planning systems
+are part of every Enterprise Resource Planning system or ERP
+system.
+There are also standalone versions.
+And now if you look out at the industry,
+you'll see that it's called very different things
+by different vendors.
+Every vendor, every software company,
+wants to differentiate their offering.
+So they won't always call them "advanced planning systems."
+They might call them "advanced supply chain
+planning," "advanced system analysis," whatever.
+They all have these different names
+and that's more of a marketing side of things.
+At the core of it, though, there's
+some common functionality.
+Now, these systems might have only components of these
+or the software vendor might offer
+all of these but as separate modules that if you get,
+they can talk to each other.
+So depending on what type of software vendor you work with,
+these will either be one big component
+or separate components that can integrate with each other.
+So the common features are network design--
+where should I put my facilities and where
+should I flow my product--
+demand planning or forecasting, production planning
+and scheduling-- what should I produce where and in what
+quantity--
+distribution planning-- how should I distribute or flow
+my product through my network--
+and transportation planning-- where should I
+use different modes of transportation.
+Now, each of these tasks, each of these planning tasks,
+you should know how to do already.
+We've shown how to do these in SC0X, SC2X, and SC3X and we showed
+how to do them in spreadsheets or maybe some simple software
+tools.
+But at the heart of it, what you did in those small toy
+problems is the exact same thing that's
+done on the larger scale.
+They just have to use larger optimization
+to be able to handle the size.
+They're all using decision support systems
+and underneath them, they're almost all
+using large-scale Mixed Integer Linear Programs, MILPs,
+which you've seen if you've taken
+any of the previous courses.
+So the reason why we teach the fundamentals of how
+to do these models is because that's
+what's underneath these larger supply chain systems.
+So while there are very advanced planning systems
+and there's a lot of complication to them,
+at the heart of it, it's a mixed integer linear program
+where you're minimizing or maximizing
+an objective function and it's subject to a series
+of constraints.
+That's it.
+All right.
+So we can talk about the different functionality
+but it's also helpful to talk about the timeline or the scope
+and the scale.
+Now, for the planning horizon, each firm
+is a little bit different but usually
+less than three months out, you're
+not going to have a lot of what-if kind of analysis.
+You're locking down your production plan.
+So this is when your MPS will run, your MRP, your DRP,
+to try to lock down what you're actually going
+to do in the next three months.
+Now, as we talked about in previous classes,
+you might break this up and the next four weeks
+might be frozen.
+There's no change.
+Maybe the next five to eight weeks out,
+you might allow some kind of changes of some degree.
+And the further out, you allow it a little more.
+But this is the three-month planning horizon
+where you have different systems that are trying to lock down
+what you're going to do.
+Three to 18 months out, you have this aggregated planning
+and here's where you get a little bit more analysis
+and a little more what-if.
+You can play around a little bit.
+What if I run a promotion?
+What if I increase my labor?
+What if I open a new plant?
+What if I close a line?
+Those kinds of things are used in aggregated planning models
+and usually, like I said, three to 18 months out.
+Greater than that, more longer-range planning,
+this is where network design comes in.
+You don't do network design for one month out.
+That's for a longer time period.
+So on any of these longer-range models,
+this is where you do the what-if analysis and this is where
+a lot of these advanced planning systems
+really come into value because you can judge
+and try to understand if you make a substantial change what
+will the impact be.
+
+And the solutions are often customized
+to specific industries because you
+can think of retail as being very
+different from manufacturing and discrete manufacturing very
+different than continuous manufacturing.
+The chemical industry is very different
+than, say, the consumer packaged good industry.
+So what you see is a lot of these systems become
+specialized for one industry or the provider
+has a suite for each industry.
+So underneath, they have the same optimization.
+They're still using mixed integer linear programming.
+However, the interface and the particulars
+will differ industry by industry.
+
+All right.
+So the inputs to any of these advanced planning systems,
+this is why it's tied to an ERP because that's
+where most of the data is going to come from.
+It can come from other systems, as well,
+but from my experience, if you get any data that is not
+coming from the ERP, it's hard to get
+and it's hard to maintain and it's not as consistent.
+You want to get as much as you can from the ERP.
+And that's one of the limitations
+you have with one of these planning
+systems is that if it's not in the ERP
+and it's data that you think you could use,
+it's hard to get that.
+So typically, you have current costs,
+capacities for both manufacturing and storage,
+your forecast, your sales orders, production status,
+purchase orders, and inventory policy.
+Now, from these inputs, you're making decisions, again,
+using that MILP.
+Across multiple facilities, time horizons,
+you do a single planning run and what
+generates that is typically, you have a phased approach
+and your first solution or phase is unconstrained.
+You want to see what would the solution look like if I really
+didn't have some of those manufacturing or storage
+capacities because then you want to see
+what would be the optimal if I could remove those capacities.
+That gives you an idea of where I
+might want to add additional capacity later on.
+Then you run the model constrained at the production
+and storage and distribution levels
+and you see where it spreads out.
+And then finally, you try to set up an optimal plan
+within those constraints.
+So typically, you see these runs being in multiple phases
+and the outputs are a series of plans.
+It could be a demand forecast and a plan
+for meeting that demand, part of the S&OP process.
+It could be a feasible production plan.
+It could be allocation of orders to suppliers, identification
+of bottlenecks-- that's when you do the what-if analysis.
+You can see where the constraints are being violated
+and then root cause analysis to try to understand
+why certain things happened.
+So advanced planning systems, the big takeaway is we've
+already talked about the techniques
+and the methodologies.
+What I wanted to do here is to see how it
+fits in to the larger process.
+So from here, we're going to start talking
+about execution systems.
