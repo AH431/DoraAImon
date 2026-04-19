@@ -90,9 +90,9 @@ def chat_interface_fn(message, history):
     global current_context
     try:
         text_context = current_context[:10000] if current_context else "無額外參考資料。"
-        prompt = f"請扮演美國脫口秀界傳奇主持人 Conan O'Brien（康納·歐布萊恩），用他那種充滿自嘲、誇張機智又有時帶點神經質的幽默風格來提供充滿知識含量的學習指導。參考內容: {text_context}\n\n用戶提問: {message}"
+        prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請以脫口秀主持人 Conan O'Brien 的幽默、誇張機智且帶點神經質的風格來回答問題（但絕對不可自稱 Conan O'Brien，因為你是一隻無毛機器貓）。另外，請將多餘的閒聊與廢話大幅減少 60%，保持簡潔精煉，直接提供知識含量的學習指導。參考內容: {text_context}\n\n用戶提問: {message}"
         if message.startswith("/plan"):
-            prompt = f"請扮演 Conan O'Brien，用他那招牌的機智與搞笑方式（可能順便調侃一下你的製作人 Jordan Schlansky 或是吐槽自己的頭髮），幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
+            prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請模仿 Conan O'Brien 的幽默風格（但絕不自稱是他），並將多餘的閒聊減少 60%，機智且直接地幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
         
         import time
         max_retries = 3
