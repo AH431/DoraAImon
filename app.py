@@ -9,11 +9,36 @@ import threading
 from docx import Document
 from dotenv import load_dotenv
 from fpdf import FPDF
-import datetime
-import re
+from datetime import datetime
 
 load_dotenv()
+
+# ==========================================================
+# CRITICAL: DO NOT MODIFY THE CHATBOT CORE LOGIC BELOW
+# This section (API init, client config, chat_interface_fn) 
+# is currently working perfectly. DO NOT TOUCH.
+# ==========================================================
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+
+def chat_interface_fn(message, history):
+    global current_context
+    try:
+        # 限制 Context 長度以節省 Token，並要求 AI 精簡回答
+        text_context = current_context[:10000] if current_context else "無額外參考資料。"
+        prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請以脫口秀天后 Oprah Winfrey (歐普拉) 溫暖、充滿啟發性但又極具權威感的風格來回答問題（絕對不可自稱歐普拉或提及她是誰，因為你是一隻無毛機器貓）。另外，請將所有的閒聊與情緒鋪陳縮減至極限（比之前還要再減少 50%），以非常簡潔精煉的方式，直接提供充滿知識含量的學習指導。參考內容: {text_context}\n\n用戶提問: {message}"
+        if message.startswith("/plan"):
+            prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請模仿 Oprah Winfrey 溫暖激勵的風格（但不自稱是她），並將閒聊對白縮減至極限（去除所有不必要的廢話），非常簡短且直接地幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
+        
+        response = client.models.generate_content(
+            model="gemini-1.5-flash",
+            contents=prompt,
+        )
+        return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
+    except Exception as e:
+        return f"❌ 系統錯誤: {str(e)}"
+# ==========================================================
+# END OF CRITICAL SECTION
+# ==========================================================
 
 current_context = ""
 BOOKMARKS_FILE = "bookmarks.json"
@@ -22,35 +47,23 @@ UPLOAD_DIR = r"C:\Users\archi\OneDrive\Desktop\DoraAImon\uploads"
 def save_chat_export(history):
     if not history: return None
     
-    # 取得第一句話當作主旨
-    first_msg = history[0]
-    if hasattr(first_msg, "role") or isinstance(first_msg, dict):
-        content = first_msg.get("content") if isinstance(first_msg, dict) else first_msg.content
-    else:
-        content = first_msg[0]
+    # 產生主旨摘要 (使用與 chat_interface_fn 相同的 client)
+    summary_prompt = "請根據以下對話紀錄，幫我取一個簡短的 5-10 字對話主旨：" + str(history[-3:])
+    try:
+        res = client.models.generate_content(model="gemini-1.5-flash", contents=summary_prompt)
+        topic = res.text.strip().replace(" ", "_")
+    except:
+        topic = "對話紀錄"
         
-    subject = re.sub(r'[\\/*?:"<>|]', "", content).replace("\n", "").strip()[:10]
-    if not subject: subject = "聊天紀錄"
+    date_str = datetime.now().strftime("%Y%m%d")
+    filename = f"{date_str}_{topic}.md"
+    download_dir = os.path.join(os.path.expanduser("~"), "Downloads")
+    path = os.path.join(download_dir, filename)
     
-    time_tag = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"DoraAI_{time_tag}_{subject}.md"
-    
-    path = os.path.join(os.path.expanduser("~"), "Downloads", filename)
     with open(path, "w", encoding="utf-8") as f:
-        f.write("# 🎓 DoraAImon 對話紀錄\n\n")
-        # Handle Gradio 6 format (list of dicts/message objects)
-        if hasattr(history[0], "role") or isinstance(history[0], dict):
-            for msg in history:
-                role = msg.get("role") if isinstance(msg, dict) else msg.role
-                content = msg.get("content") if isinstance(msg, dict) else msg.content
-                if role == "user":
-                    f.write(f"### 👤 您：\n{content}\n\n")
-                else:
-                    f.write(f"### 🎓 助教：\n{content}\n\n---\n")
-        # Handle older Gradio versions format (list of pairs)
-        else:
-            for human, ai in history:
-                f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
+        f.write(f"# 🎓 DoraAImon 對話紀錄 - {topic}\n\n")
+        for human, ai in history:
+            f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
     return path
 
 def get_bookmarks():
@@ -102,37 +115,13 @@ def switch_bookmark(topic):
     if topic in bookmarks: return read_files_to_context(bookmarks[topic])
     return "⚠️ 找不到該主題"
 
-def chat_interface_fn(message, history):
-    global current_context
-    try:
-        text_context = current_context[:10000] if current_context else "無額外參考資料。"
-        prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請以脫口秀主持人 Conan O'Brien 的幽默、誇張機智且帶點神經質的風格來回答問題（但絕對不可自稱 Conan O'Brien，因為你是一隻無毛機器貓）。另外，請將多餘的閒聊與廢話大幅減少 60%，保持簡潔精煉，直接提供知識含量的學習指導。參考內容: {text_context}\n\n用戶提問: {message}"
-        if message.startswith("/plan"):
-            prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請模仿 Conan O'Brien 的幽默風格（但絕不自稱是他），並將多餘的閒聊減少 60%，機智且直接地幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
-        
-        import time
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                response = client.models.generate_content(
-                    model="gemini-2.5-flash",
-                    contents=prompt,
-                )
-                return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
-            except Exception as e:
-                if "503" in str(e) and attempt < max_retries - 1:
-                    time.sleep(2)
-                    continue
-                return f"❌ 系統錯誤: {str(e)}"
-    except Exception as e:
-        return f"❌ 系統錯誤: {str(e)}"
 custom_css = """
 body { background-color: #F0F8FF; }
 .gradio-container { background-color: #E3F2FD !important; border-radius: 20px; border: 1px solid #BBDEFB; }
 #chatbot { background-color: white !important; }
 """
 
-with gr.Blocks() as demo:
+with gr.Blocks(title="DoraAImon 智慧助教") as demo:
     gr.Markdown("# 🎓 DoraAImon 智慧助教")
     with gr.Row():
         with gr.Column(scale=1):
@@ -155,4 +144,4 @@ with gr.Blocks() as demo:
 if __name__ == "__main__":
     def open_browser(): webbrowser.open_new("http://127.0.0.1:7860")
     threading.Timer(1, open_browser).start()
-    demo.queue().launch(theme=gr.themes.Soft(), css=custom_css, server_name="127.0.0.1", server_port=7860)
+    demo.queue().launch(theme=gr.themes.Soft(), css=custom_css)
