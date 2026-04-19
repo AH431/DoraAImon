@@ -104,12 +104,12 @@ def chat_interface_fn(message, history):
                 )
                 return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
             except Exception as e:
-                # If it's a 503 error, wait a bit and retry
                 if "503" in str(e) and attempt < max_retries - 1:
-                    time.sleep(2) # Wait 2 seconds before retrying
+                    time.sleep(2)
                     continue
                 return f"❌ 系統錯誤: {str(e)}"
-
+    except Exception as e:
+        return f"❌ 系統錯誤: {str(e)}"
 custom_css = """
 body { background-color: #F0F8FF; }
 .gradio-container { background-color: #E3F2FD !important; border-radius: 20px; border: 1px solid #BBDEFB; }
