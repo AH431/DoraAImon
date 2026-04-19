@@ -1,0 +1,363 @@
+
+The next major thing we want to cover is data cleaning.
+And as we said in the beginning of the course, garbage in,
+garbage out.
+So if you take dirty data and you try and process it and try
+and make some inferences from it,
+you're apt to get wrong answers that you may realize are wrong,
+or you might not even realize are wrong.
+So data cleaning is really important,
+even though it's a little bit monotonous and not
+the most fun job in the world.
+Some example problems that you might see.
+One of the biggest ones is date format.
+So any time you see dates and date time formats, very often
+there will be some mismatch here.
+There are lots of different ways to record dates
+and to order dates.
+A month, day, year, or year, date, month, et cetera.
+It's essential that these date formats
+are consistent throughout your entire dataset.
+And that they're clean, and that they work the same way.
+So specifically if you wanted to record a time stamp,
+there are lots of different ways to record time stamps.
+And those are implemented differently
+in different software packages, and even different database
+vendors implement these differently.
+The next of course, is that text has to be in the correct case.
+So either cases have to match or not match,
+or be all uppercase or all lower.
+Of course, this will depend on your application
+and the specific circumstances of your data.
+So you need to understand the data,
+and you need to be able to make sure that things
+are corrected or consistent.
+Of course, very often you need to split first and last names
+to do things like mail merge or to welcome users
+into your system, these can be tricky.
+Of course, these are not always the easiest thing to do,
+because first names can be split differently
+than last names in different languages and cultures,
+and they may be ordered differently.
+There's also column mismatch and offset.
+So for example, if you have a dataset that's
+delimited by a specific character,
+say a comma, or a double quote, or a slash, a semi-colon,
+or a tab, you can imagine that sometimes, in some systems,
+these data might be recorded in one of the fields.
+So one of the things that can happen
+is say, for example, if you have a last name comma
+first name in a single field that represents the user's
+name, that might be read by the system as two different columns
+because it's separated by that comma.
+And so you have to be really careful when you're
+importing your data to make sure that you check
+and you spot check quite extensively
+to make sure that you don't have things that are off by one,
+or have an extra column for example, in some of the rows.
+And this can be tricky, but there are some tools
+that help you do this.
+You might need to remove records with missing values
+if you need to do an analysis that
+relies on having those values.
+Or you might even need to impute missing values based
+on some logic, or impute them from existing data.
+Say for example, to try and make that first name and then
+the last name from a full name field if that's available.
+Another thing you might need to do
+is prepare two datasets to try and merge them
+together with imperfect keys.
+So you may have to figure out what
+the perfect set of key combinations
+might be to match up data and make sure that the data is
+consistent, make sure there are no extra characters
+or things like that, so that the datasets can be fully merged,
+and that you won't miss any rows systematically,
+in either dataset that you want to join together.
+
+Filtering large data sets is a common problem.
+So suppose you receive a really large dataset
+from a third party, which contains all the order
+data for their 2,000 stores, and it's
+over a whole number of years.
+And so you can imagine this is tons and tons of records.
+But you only care about stores that are in the northeast.
+And you only need orders that have a total of over $20
+to do the analysis that you want to do.
+And you only need the orders that are processed after 2015.
+So how can you get just the right orders that you want?
+You can imagine this might involve
+cleaning up a whole giant dataset
+when you only need certain rows.
+And it might involve putting a really big dataset
+into a database that might not be specced for the job
+that you actually need to accomplish.
+You might actually have to get more memory
+in the database and more storage capacity,
+and deal with lots of different hassles and headaches,
+because the dataset that you get is much, much larger
+than the data set that you ultimately need to process.
+So we'll talk about some tools that
+can help assist you in this process of whittling down
+a very large dataset, down to just the records that you need.
+The good news is there are lots of different types of data
+cleaning solutions.
+This class of problem is generally
+called extract, transform, and load, or ETL for short.
+And it deals with not only extracting and getting
+the relevant data, but maybe transforming
+some of the fields to other fields,
+and also loading it up into a database
+or whatever system that you need to use.
+There are off the shelf software systems
+made by third parties that allow for data preparation.
+And some of them are much more advanced tools
+that do lots of other statistical analysis
+and things like that, but they're also
+very strong in data preparation.
+These are made by lots of vendors, Trifacta, Paxata,
+Alteryx, SAS, Stata, et cetera.
+These are lots of major companies
+that deal with this exact problem.
+There are open source programming languages.
+Python has lots of support and so does R
+for loading up datasets, for parsing datasets.
+These libraries can do things like read a comma separated
+value file or a tab separated value file
+and put it into memory in a set of columns and rows
+that you can access really quickly.
+They can build dictionaries for you from your data.
+They can build key value pair stores for your datasets
+in large, large lists that you can
+use to run through your data and to, for example, pick out
+just the right rows you need, or to do some processing
+on a set of columns.
+There are even Unix command line tools
+that can help you do a lot of these same tasks,
+and they can operate without even loading data
+into a program, or having a program try and read
+a dataset file.
+So these can be done in the file system in batches
+during processing.
+These include things like regular expressions or regex,
+which refers to a set of things that
+allow you to sort and search by specific characteristics
+of strings in your dataset.
+There's grep, which we'll talk about.
+Sed and awk, which are tools that can let you
+do very large sets of record processing very quickly.
+These range from being the most user
+friendly for the off the shelf solutions, to the least
+user friendly for things that you really
+need to learn a whole bunch about
+and understand where the files are and the data are.
+But in a lot of problems in life, it's the same thing.
+The least user friendly things are sometimes the most flexible
+and let you do anything you need to do,
+and they're pretty cheap.
+These won't cost you any money.
+These will be the most expensive.
+You'll have to get some sort of licensing usually.
+And there may be a little bit less flexibility with what they
+can specifically do for you.
+Off the shelf tools for data preparation sometimes
+give you lots of other features.
+Very often, they have graphical user interfaces
+so you can really see what's going.
+On you can drag and drop specific datasets
+and manipulate them with arrows or processes
+that need to happen along the way.
+And that means that you can really
+reduce the amount of programming that you
+need to do to actually process your data set, which
+can be really helpful.
+Because it enables more people to actually be
+able to do this type of task.
+And that means when that task is actually
+given to the end users that really need
+to do this operation, they'll be very intimately familiar
+with the data that needs to be manipulated,
+and how it needs to be manipulated.
+So that can be really helpful.
+So it enables you to collaborate with non-programmers
+to do some of the programming tasks
+that need to be done at a company.
+The next thing is that they're really good at joining
+disparate datasets together.
+So you can take two different datasets
+and before you even load them into SQL,
+you can join two things together,
+which can be really helpful.
+These systems are also built to perform well
+on really large datasets.
+Very often, off the shelf tools have reproducible steps
+and workflow.
+This means that you can build a system that
+can process data, say a pipeline that
+can take a specific type of input dataset
+and join it with some other type of dataset
+and produce some output that you need.
+And that pipeline can be used again and again, even
+with new versions of data.
+And it can be stable, and it can be fully reproducible
+so people can understand exactly what's happening along the way.
+Along these same lines, very often these systems
+offer version control.
+And so version control can allow you
+to take a version of a pipeline, or a version of a pipeline
+joined with a version of a dataset that
+allows you to know specifically what the capabilities are
+for any given version of the software.
+And then the next version up will maybe offer something new,
+or be able to process a certain new type of piece of data.
+This software though isn't free.
+So this means you have to pay for licensing costs.
+You have to learn how to use it, and you
+have to live within whatever limitations it might have.
+On the other hand, the open source programming languages,
+they work in data frames and data dictionaries.
+So this means that you're going to have
+to learn a little bit about programming to use them.
+It requires some skills, but the languages
+are relatively Google friendly.
+Meaning that you can use a search system
+to be able to find a lot of the answers
+that you might come into.
+So say, for example, you need to learn
+how to open up a CSV file, you can Google that usually
+and somebody will have worked a problem in Python
+or worked an example in R that will show you how to do that.
+There is a really broad set of computational and scientific
+tools that are available for these platforms.
+So there are machine learning tool kits,
+and there are statistical toolkits,
+and even linear algebra toolkits to be
+able to use on these programming languages.
+And so that's a really nice feature that's available,
+and they don't cost anything.
+There are even ways to manage reproducibility
+of your software in these open source programming
+languages, including version control,
+inspecting all the steps of a pipeline, for example.
+So one example of this is the Jupyter Notebook,
+which works with Python.
+And so what this allows you to do
+is to visualize all of the steps that
+are involved in data processing and within a pipeline,
+so that you can track exactly what's
+happening at each line that's running the software.
+These open source programming languages are free.
+But of course, they require some expertise.
+So you are going to have to spend time
+to learn how to use them.
+A lot of things won't be available off the shelf
+necessarily, so you'll have to find the right library,
+and make sure that it works with another library
+or another system that you're using,
+and that the version works with the right version
+of the software and operating system or language
+that you're using.
+So there are constraints and difficulties
+with employing these techniques.
+But of course, they're very flexible,
+and totally give you a lot of extra features.
+The next level down was those Unix command line tools.
+And those are the things that are really
+at the system level and the operating system level,
+rather than being in a software language
+or in a third party software application.
+And so these were developed a long time ago, in the 1970s,
+but they're still relevant today.
+People use these quite a bit.
+You can even tell from the command names
+that these things are definitely not the most user friendly, awk
+and grep and sed and password.
+So these aren't as user friendly as the previous options,
+but they're extremely fast and versatile.
+And many of these are also Google
+friendly for a common application.
+So if you need to search for every record in a very
+large dataset that starts with a certain characteristic,
+or find the 5th column and the 7th column
+and output those only to a file very quickly,
+these are your things to use.
+They're excellent for breaking up large datasets that
+might crash other software.
+So sometimes the datasets are so big,
+that it just doesn't even make sense
+to load the dataset into a tool.
+These are also free, and they're available
+or some implementation of them is available on just
+about every operating system.
+So let's look at a few things that you can do with these Unix
+command line systems.
+So you can do something called regex,
+which is regular expressions.
+And as I mentioned, these are used to specify a text pattern.
+So you can really get very complicated
+in matching a specific string pattern.
+Say for example, if you want to find
+all of the email addresses that are in a very large file,
+you can say, oh, I want something
+that starts with a string that can contain characters
+and numbers of a certain size, that's immediately followed
+by an at symbol, with some other text that could be characters
+and numbers, but may be limited on what
+types of special characters you could have with a period,
+and then one of the following suffixes like com, or net,
+or gov, or edu.
+So you can really describe the strings
+that you want to get out of a large corpus of text
+and do some processing on those.
+The next thing that you can do is grep.
+And grep stands for Globally Search Regular Expression
+and Print.
+So it's built on top of this regex stuff.
+So the idea is that you can search
+to find text that matches a specified pattern.
+And you can do that really dramatically quickly.
+So this doesn't actually even process line by line
+through the software.
+There's a sophisticated set of techniques
+that are used to find exactly what you need
+and to print it out to the console.
+The next thing is sed, which stands for Stream Editor.
+And this is used to find and replace
+text that matches a specified pattern,
+and there are lots of other things you can do with this.
+Finally, we'll cover awk, which allows
+you to do a lot of the same things you can do in grep,
+and it has the same regex regular expression
+support as the tools above, but you
+can do a lot of other things with delimited data in awk.
+And so for example, you can break up the data
+very quickly into columns, if it's already
+delimited in the files.
+So you can specify what type of delimiter is in there,
+and say maybe you just get the right set of columns
+that you need.
+Maybe you only need the first five columns
+from a very large file that has many columns in it.
+And so you can reduce the total size of the data
+dramatically on the column space,
+as well as in the row space, which was the focus of grep,
+for example.
+Some key points from this lesson.
+Data almost always needs to be cleaned or pre-processed
+before can be inserted into a database.
+This might involve reducing the size of your data
+dramatically by filtering, or specifying just the rows
+that you need.
+The next thing is that this data cleaning
+can be performed with lots of different types of tools.
+There is free software, and the learning curve
+may be steeper for those.
+And then there's also commercial software,
+but those may be a little bit more expensive.
+So like just about everything in life,
+there are pros and cons of all of these approaches.
+So with that, we'll end this segment here.
+Please take a look at the quick questions
+and think about the general assignments
+and the graded assignments for this section.
+Thanks so much.

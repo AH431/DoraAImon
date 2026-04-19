@@ -1,0 +1,182 @@
+
+In this segment, we're going to cover indexes
+in database performance.
+When database tables get really large,
+it can impact their performance.
+It can make finding or updating a specific record
+really slow or costly and computationally expensive.
+One solution to this that's been developed is called indexing.
+An index is a completely separate data object
+that's stored in the database.
+And the whole role of an index is
+that it's listing all of the records in order
+in the context of a specific attribute.
+So for example, if you wanted to list
+all of the records in order by the last name of a customer,
+there is a way to do that with an index.
+And primary keys and foreign keys
+are automatically indexed for you
+because it's expected that those fields will
+be used so frequently.
+You can imagine you look up records
+in a table very frequently using the primary or foreign keys.
+So this is very valuable.
+So for example, if we have our customers table
+with a customer number, the company name, the customer rep,
+and the credit limit, you can imagine
+if you have a lot of company names
+here in this customers table, retrieving a specific company
+by name might get really slow.
+So what we can do is build an index
+based on the company name.
+And what this will be is a list of all the company
+names in a specific order that the database will make very
+quick to look up and an index, and this index
+will point us to the appropriate customer
+number in the order of the existing database table.
+So, for Amaratunga Enterprises, the index
+will point us to the right location in memory
+where all of the data is stored for customer number 522.
+In Connor Co, well, we'll be pointing right to that record
+as well.
+And Feni Fabricators will be pointing to that record
+as well.
+And so the whole point of this is
+that we have our original data stored in its original form
+with its customer number look-up that have already exists.
+But if we want to have a way to look up by company name really
+quickly, we can create this separate object in the database
+called an index that will help us look up all of the records
+by company name more quickly.
+These index columns are really rapidly searched,
+so the database will have to figure out
+how to store this in such a way that it can
+be retrieved extremely quickly.
+
+Now, there are some consequences to indexes.
+Each index may be updated when a row is updated.
+So you can imagine if you update some piece of data
+in the database, the index may accordingly have to be updated.
+This slows updates, insertions, and deletion events
+so when those happen, any time you
+have to update data that's related to an indexed field,
+you can imagine this will slow those updates, insertions,
+or deletions.
+If a database is mostly used for reading values,
+that is, you're just looking for specific customer orders
+where you're looking for specific customer details
+and you're not updating that database table very often,
+then you can use indexes on your most selected attributes
+to improve performance.
+However, if a database table is mostly updated,
+you want to use as few indexes as possible.
+There's generally a practical maximum of three
+or four indexes per table.
+Now let's think about a more detailed example with indexes.
+So let's say we have that customers table.
+And a customers table has a customer ID as a primary key.
+We might also want to search by a customers name,
+maybe by their last name, maybe by their first name,
+maybe by both.
+So we might think about using something
+like that to make an index.
+We might also want to look them up by their city and state.
+We might want to look them up by a zip code, or postal code,
+or their address.
+So to make it faster to look up using these specific types
+of attributes, we can generate multiple indexes
+for these things.
+We can generate an index for the name,
+we can generate an index for the city or the state,
+for the zip or postal code, or for the address.
+And each of these indexes will help
+us look up specific customer records more quickly by each
+of these specific attributes.
+So in this case, if we make indexes,
+we'll be generating four new indexes.
+What's the consequence, again?
+It will be slower for inserts, updates, deletes,
+but it will make it much faster for looking up
+values in the customers table or records
+in the customers table using any of these attributes.
+So if the customers' database is fairly stable
+and has few updates, this is totally fine.
+So let's dig in and look at the syntax
+that's used to create an index.
+Before we do this actually, I should
+say that many times you'll probably
+use a tool such as a development environment or a client tool
+for your SQL database, such that you won't actually type out
+these words to create a new index,
+you might just use a visual tool to do it.
+But it's worth us digging in and looking a little bit
+real quick because it's pretty straightforward.
+So if we want to create a new index on the city and the state
+of the customers, so we could say for example,
+analyze all of the customers in specific cities
+or in specific states.
+We can do that by creating an index.
+So on the customers table we'll be creating a new index called,
+we'll name ix underscore city underscore state.
+This will be the new index attribute that we have,
+this will be the name of that indexed field
+and it will be on the customers table.
+And the two fields that we'll be using
+or the two attributes that we'll be using in this index
+are the state and the city of the customer.
+So what will this do for us?
+This will give us a listing of all of the different customers
+from all the different states in order,
+as well as all of the cities inside
+of those states in order.
+So I actually picked these in reverse order
+from the way we conventionally say them.
+I picked it so that the state is first and then the city.
+So we'll actually get to the broadly right place using
+the state and then we'll get to the specific city within a state
+without potentially having as many collisions as they
+do for repeated city names.
+And so what this will do is it will make searching
+for customers within a specific state faster,
+so if I know that the customers reside in Massachusetts
+versus New York, I'll be able to do analyses
+on those sets of customers much more quickly
+and create queries related to entire swaths of customers
+from those states.
+It will also make searching for customers
+within a specific state and the specific city faster.
+So every single city I'll be able to do one by one now more
+quickly because they have made this state-city index
+inside the customers table.
+These indexing techniques are used extensively
+throughout many systems.
+So we can use indexing to optimize search engines,
+for example.
+Internet search engines are optimized
+using these things called text retrieval engines.
+And what those can do is they can
+search through really large text corpuses
+and it can index every single keyword that might be searched
+with one of those indexes.
+And so, each of those keywords will
+have a set of associated web sites for example, that might
+be related to that keyword.
+And then these index entries can be
+optimized based on the number of occurrences of the word
+or the rank of a keyword among all the possible matches
+for that keyword.
+The frequency, or importance of links to a website,
+or the usage of the web site, or other factors,
+might actually be used to optimize these indexes
+and to optimize the performance of this search engine.
+So some key points from this lesson.
+Indexes are used to make searching a database faster.
+Indexes, if you have many of them,
+will slow updates, insertions, and deletions.
+So you have to prioritize the use of indexes
+to the most selected attributes and not make too many of them
+so that the database performance won't be impacted.
+This means that we have to think about how the database will
+be used in practice, how each of the tables
+will be used in the business to determine the best
+use of indexing for all the tables.

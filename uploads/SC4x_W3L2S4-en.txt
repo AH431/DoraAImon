@@ -1,0 +1,182 @@
+
+So now that we've looked at how machine learning works,
+and motivated a bit about why we want
+to use it in the San Francisco and New York housing
+example, what we want to do next is
+called through a bunch of different machine
+learning algorithm classes.
+We want to understand the lay of the land.
+So there are four major types or classes of machine learning
+algorithms, and they differ a bit
+about what the overall application is
+and what types of data you have available.
+The first are called classification techniques,
+and these assign records or rows of your dataset
+to predefined, discrete groups.
+This is just as we saw with the housing data.
+We're assigning or classifying each record or each home
+that came in the dataset to either be from San Francisco
+or from New York.
+The next is clustering, and clustering algorithms split
+records up into discrete groups based on their similarity.
+These groups don't need to be known ahead of time.
+In fact, we'll be looking at the characteristics
+of the underlying data to try and figure out
+where the group boundaries are or where
+the clusters of different records are that form
+these discrete groups.
+We'll show you an example of this.
+The next class of algorithms is regression.
+So you've seen these before, where
+we're trying to predict a value of a continuous
+or a discrete variable based on independent input parameters.
+The last is association learning,
+and this is a class of algorithms
+that looks at how to observe which values appear together
+frequently.
+The great example of this is if you're buying something online
+and you get a recommendation.
+So recommendation engines look frequently
+for which items are purchased together by different people,
+and they try and make predictions and suggestions
+for people when they're checking out and they buy one item,
+that they might also be interested in other items.
+Now, within classification algorithms,
+there are two different major types.
+There are supervised and there are unsupervised
+learning algorithms.
+These are just fancy ways of saying
+whether the data, the outcome data or the label,
+is known ahead of time.
+So in supervised learning, the idea
+is that there is already a correct answer or label known
+in the training data for an outcome that you'd like.
+So for example, the label might have been applied by a person
+to say that this order was successful.
+Or it might already exist.
+It might be a profitable number in an order
+that we know that this set of orders
+has a certain characteristic that we really like
+because it's very profitable.
+And so label data are used to train an algorithm
+using feedback from a human or using
+certain parameters of that labeled data or that outcome
+that we really like.
+So generally, what we're trying to do here
+is look at the labels of the outcomes
+and figure out what are the underlying characteristics
+of the input data or the data associated or the features
+associated with each order, and try
+to understand how they lead to successful orders.
+So for example, if we had applied a label
+to each of the orders to say that they were successful
+and they were really excellent orders, what
+we would try and do is figure out
+what are the underlying characteristics of those orders
+that lead them to be successful?
+Or if we have a continuous value like the profitability
+of the order, what we're going to try and do
+is figure out what are the characteristics that
+lead to higher profit in our orders
+or lower profit in our orders?
+Then we want to apply or test this trained
+model on some new, unseen data to see
+if, in those new records, we can predict the label.
+Can we predict that it will be a successful order?
+Or can we predict what the profit is, just
+as we would have done with regression?
+With unsupervised learning, we're
+finding some previously unknown patterns in our data
+without any labels or any guidance from a human.
+We don't have the specific outcome variable in mind
+that we want.
+What we're going to do is look for specific clusters of data,
+for example, that have similarities
+in each of the orders.
+And, for example, then we're going
+to dig deeper in those sets of orders
+and try and understand what differentiates
+the different clusters, and why.
+In this case, there is no training
+or testing or validation process necessarily,
+because the correct answer isn't known.
+So if we look at a normal workflow
+for supervised learning, what we do is we take some raw data,
+and we take some labels that are applied to it.
+These labels, as I said--
+they might already exist.
+They might be underlying data set characteristics
+that we really care about, or they
+might be labeled successes and failures, for example.
+And we take those two things together-- the raw underlying,
+independent input variables or characteristics of each
+of our records, and those labels together--
+to train an algorithm or train a model.
+And then once we've done that, we build a final model
+that we're happy with.
+From that model, we can evaluate, given some new data,
+how well that model does in practice,
+and we can go back and tweak the model if needed.
+Then once we have a model we're happy with,
+we can take unlabeled data, put it through the model,
+and then finally, make predictions
+about each of the new records that
+were previously unlabelled, and decide
+whether they're very likely to be successful
+or very likely to be failures, or if they'll
+have a high profit or not.
+With unsupervised learning, the approach
+is a little bit different.
+What we do is we take our raw data without any output
+label or any specific parameter that we're
+interested in optimizing, and we look
+at how all of the different records
+we have, all the different orders,
+for example, how they cluster together
+or how they are grouped together.
+We try and define some boundaries
+using an algorithm, which then develops what we call a model.
+And this model will be, say, a set of defined boundaries
+around specific types of orders or successes or failures.
+And we do that by actually looking
+in each of those clusters for specific examples of rows
+or orders in our dataset, and we try and understand
+something about them and label that whole group.
+And then we can use those existing groupings
+that we've developed in the model and labeled,
+and then use them ongoing in production
+to help us make predictions for future orders or future rows.
+Some unsupervised examples, where it really
+excels over supervised learning, is fraud and anomaly detection.
+So, for example, you just don't have
+that many positive examples that are labeled a fraud.
+So what we try and do is we look at the entire dataset together,
+and we try and understand what are the characteristics of all
+of the orders, and try and see how
+they are different in some cluster to understand where
+there is likely to be fraud.
+It's also really good for association learning.
+So, for example, if you look at the Google suggestion box, what
+you'll see is a whole bunch of different words of autocomplete
+that are based on what people are associating
+with a specific word.
+Or not only associated with computing,
+but with lots of other things.
+So some key points from this lesson--
+supervised learning uses outcome variables
+known as labels for each record to identify patterns
+in the input variables, or features related to the outcome
+variable.
+In unsupervised learning, the process is different.
+The outcome variable is not known ahead of time,
+so we're looking at the relationships among the input
+variables to identify some patterns or clusters
+of different records.
+And then with those clusters, we'll try and understand more
+about them.
+Machine learning algorithms are primarily
+used to make predictions or learn
+about new, unlabelled data.
+And so with that, we'll end this segment here.
+And go ahead and start those quick questions,
+and we'll be back in just a bit.

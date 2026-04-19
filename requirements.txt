@@ -1,0 +1,5 @@
+gradio
+google-generativeai
+python-docx
+PyPDF2
+pillow

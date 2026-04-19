@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\queueing.py", line 856, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\route_utils.py", line 358, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\blocks.py", line 2179, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\blocks.py", line 1636, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        fn, *processed_input, limiter=self.limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "C:\Users\archi\AppData\Local\Programs\Python\Python314\Lib\site-packages\gradio\utils.py", line 1060, in wrapper
+    response = f(*args, **kwargs)
+  File "C:\Users\archi\OneDrive\Desktop\DoraAImon\app.py", line 25, in save_chat_export
+    for human, ai in history:
+        ^^^^^^^^^
+ValueError: too many values to unpack (expected 2, got 4)
+^C
