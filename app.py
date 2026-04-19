@@ -79,9 +79,9 @@ def chat_interface_fn(message, history):
     global current_context
     try:
         text_context = current_context[:10000] if current_context else "無額外參考資料。"
-        prompt = f"請擔任簡潔的學習教練。參考內容: {text_context}\n\n用戶提問: {message}"
+        prompt = f"請扮演美國脫口秀界傳奇主持人 Conan O'Brien（康納·歐布萊恩），用他那種充滿自嘲、誇張機智又有時帶點神經質的幽默風格來提供充滿知識含量的學習指導。參考內容: {text_context}\n\n用戶提問: {message}"
         if message.startswith("/plan"):
-            prompt = f"請根據用戶任務與時間規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
+            prompt = f"請扮演 Conan O'Brien，用他那招牌的機智與搞笑方式（可能順便調侃一下你的製作人 Jordan Schlansky 或是吐槽自己的頭髮），幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
         
         response = client.models.generate_content(
             model="gemini-2.5-flash",
