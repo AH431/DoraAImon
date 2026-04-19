@@ -74,7 +74,7 @@ def save_chat_export(history):
         else:
             for human, ai in history:
                 f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
-    return path
+    return path, gr.update(value=f"✔️ 已經成功將檔案準備好：【{filename}】（請確認瀏覽器下載清單）", visible=True)
 
 def get_bookmarks():
     if os.path.exists(BOOKMARKS_FILE):
@@ -135,26 +135,31 @@ body { background-color: #F0F8FF; font-family: 'Inter', 'Segoe UI', 'Arial', san
     line-height: 1.6;
     letter-spacing: 0.3px;
 }
+.left-col { display: flex !important; flex-direction: column !important; justify-content: space-between !important; height: 100% !important; }
+.left-col > .form { flex-grow: 1; } /* Help internal Gradio form components stretch if needed */
 """
 
 with gr.Blocks(title="DoraAImon 智慧助教") as demo:
     gr.Markdown("# 🎓 DoraAImon 智慧助教")
     with gr.Row():
-        with gr.Column(scale=1):
-            file_input = gr.File(label="上傳筆記或考題", file_count="multiple")
-            topic_input = gr.Textbox(label="自訂主題名稱 (選填)")
-            load_btn = gr.Button("解析並儲存", variant="primary", size="sm")
-            status = gr.Textbox(label="狀態", interactive=False, show_label=False)
-            bookmarks = gr.Dropdown(label="書籤切換", choices=list(get_bookmarks().keys()))
+        with gr.Column(scale=1, elem_classes="left-col"):
+            with gr.Column():
+                file_input = gr.File(label="上傳筆記或考題", file_count="multiple")
+                topic_input = gr.Textbox(label="自訂主題名稱 (選填)")
+                load_btn = gr.Button("解析並儲存", variant="primary", size="lg")
+                status = gr.Textbox(label="狀態", interactive=False, show_label=False)
+                bookmarks = gr.Dropdown(label="書籤切換", choices=list(get_bookmarks().keys()))
             
-            exp_chat = gr.DownloadButton("匯出對話記錄", variant="secondary", size="sm")
+            with gr.Column():
+                exp_chat = gr.DownloadButton("匯出對話記錄", variant="secondary", size="lg")
+                export_status = gr.Textbox(label="匯出狀態", interactive=False, show_label=False, visible=False)
 
             bookmarks.change(switch_bookmark, inputs=[bookmarks], outputs=[status])
             load_btn.click(load_files, inputs=[file_input, topic_input], outputs=[status, bookmarks])
 
         with gr.Column(scale=4):
             chatbot = gr.ChatInterface(fn=chat_interface_fn, chatbot=gr.Chatbot(label="哆啦AI夢", height=650))
-            exp_chat.click(fn=save_chat_export, inputs=[chatbot.chatbot], outputs=[exp_chat])
+            exp_chat.click(fn=save_chat_export, inputs=[chatbot.chatbot], outputs=[exp_chat, export_status])
 
 if __name__ == "__main__":
     def open_browser(): webbrowser.open_new("http://127.0.0.1:7860")
