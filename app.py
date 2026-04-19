@@ -153,7 +153,7 @@ with gr.Blocks(title="DoraAImon 智慧助教") as demo:
             load_btn.click(load_files, inputs=[file_input, topic_input], outputs=[status, bookmarks])
 
         with gr.Column(scale=4):
-            chatbot = gr.ChatInterface(fn=chat_interface_fn, chatbot=gr.Chatbot(height=650))
+            chatbot = gr.ChatInterface(fn=chat_interface_fn, chatbot=gr.Chatbot(label="哆啦AI夢", height=650))
             exp_chat.click(fn=save_chat_export, inputs=[chatbot.chatbot], outputs=[exp_chat])
 
 if __name__ == "__main__":
