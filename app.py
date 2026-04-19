@@ -22,8 +22,19 @@ def save_chat_export(history):
     path = os.path.join(os.path.expanduser("~"), "Downloads", "DoraAImon_Chat_Export.md")
     with open(path, "w", encoding="utf-8") as f:
         f.write("# 🎓 DoraAImon 對話紀錄\n\n")
-        for human, ai in history:
-            f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
+        # Handle Gradio 6 format (list of dicts/message objects)
+        if hasattr(history[0], "role") or isinstance(history[0], dict):
+            for msg in history:
+                role = msg.get("role") if isinstance(msg, dict) else msg.role
+                content = msg.get("content") if isinstance(msg, dict) else msg.content
+                if role == "user":
+                    f.write(f"### 👤 您：\n{content}\n\n")
+                else:
+                    f.write(f"### 🎓 助教：\n{content}\n\n---\n")
+        # Handle older Gradio versions format (list of pairs)
+        else:
+            for human, ai in history:
+                f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
     return path
 
 def get_bookmarks():
