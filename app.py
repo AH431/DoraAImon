@@ -62,8 +62,18 @@ def save_chat_export(history):
     
     with open(path, "w", encoding="utf-8") as f:
         f.write(f"# 🎓 DoraAImon 對話紀錄 - {topic}\n\n")
-        for human, ai in history:
-            f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
+        # Handle Gradio 6 format (list of dicts/objects) vs old format
+        if history and (hasattr(history[0], "role") or isinstance(history[0], dict)):
+            for msg in history:
+                role = msg.get("role") if isinstance(msg, dict) else msg.role
+                content = msg.get("content") if isinstance(msg, dict) else msg.content
+                if role == "user":
+                    f.write(f"### 👤 您：\n{content}\n\n")
+                else:
+                    f.write(f"### 🎓 助教：\n{content}\n\n---\n")
+        else:
+            for human, ai in history:
+                f.write(f"### 👤 您：\n{human}\n\n### 🎓 助教：\n{ai}\n\n---\n")
     return path
 
 def get_bookmarks():
@@ -116,9 +126,9 @@ def switch_bookmark(topic):
     return "⚠️ 找不到該主題"
 
 custom_css = """
-body { background-color: #F0F8FF; }
+body { background-color: #F0F8FF; font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif; }
 .gradio-container { background-color: #E3F2FD !important; border-radius: 20px; border: 1px solid #BBDEFB; }
-#chatbot { background-color: white !important; }
+#chatbot { background-color: white !important; font-size: 16px; }
 """
 
 with gr.Blocks(title="DoraAImon 智慧助教") as demo:
