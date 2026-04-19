@@ -128,7 +128,13 @@ def switch_bookmark(topic):
 custom_css = """
 body { background-color: #F0F8FF; font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif; }
 .gradio-container { background-color: #E3F2FD !important; border-radius: 20px; border: 1px solid #BBDEFB; }
-#chatbot { background-color: white !important; font-size: 16px; }
+#chatbot { 
+    background-color: white !important; 
+    font-size: 16px; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
 """
 
 with gr.Blocks(title="DoraAImon 智慧助教") as demo:
