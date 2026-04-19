@@ -30,7 +30,7 @@ def chat_interface_fn(message, history):
             prompt = f"你的名字叫「哆啦AI夢」，是一隻來自未來的無毛機器貓。請模仿 Oprah Winfrey 溫暖激勵的風格（但不自稱是她），並將閒聊對白縮減至極限（去除所有不必要的廢話），非常簡短且直接地幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
         
         response = client.models.generate_content(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             contents=prompt,
         )
         return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
@@ -50,7 +50,7 @@ def save_chat_export(history):
     # 產生主旨摘要 (使用與 chat_interface_fn 相同的 client)
     summary_prompt = "請根據以下對話紀錄，幫我取一個簡短的 5-10 字對話主旨：" + str(history[-3:])
     try:
-        res = client.models.generate_content(model="gemini-1.5-flash", contents=summary_prompt)
+        res = client.models.generate_content(model="gemini-2.5-flash", contents=summary_prompt)
         topic = res.text.strip().replace(" ", "_")
     except:
         topic = "對話紀錄"
@@ -141,8 +141,8 @@ with gr.Blocks(title="DoraAImon 智慧助教") as demo:
             status = gr.Textbox(label="狀態", interactive=False, show_label=False)
             bookmarks = gr.Dropdown(label="書籤切換", choices=list(get_bookmarks().keys()))
             
-            exp_chat = gr.Button("匯出對話紀錄", variant="secondary", size="sm")
-            download_file = gr.File(label=None, show_label=False, height=100)
+            exp_chat = gr.Button("匯出對話記錄", variant="secondary", size="sm")
+            download_file = gr.File(label=None, show_label=False, height=60, container=False)
 
             bookmarks.change(switch_bookmark, inputs=[bookmarks], outputs=[status])
             load_btn.click(load_files, inputs=[file_input, topic_input], outputs=[status, bookmarks])
