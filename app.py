@@ -94,13 +94,21 @@ def chat_interface_fn(message, history):
         if message.startswith("/plan"):
             prompt = f"請扮演 Conan O'Brien，用他那招牌的機智與搞笑方式（可能順便調侃一下你的製作人 Jordan Schlansky 或是吐槽自己的頭髮），幫用戶規劃讀書進度: {message.replace('/plan', '')}. 資料: {text_context}"
         
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-        )
-        return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
-    except Exception as e:
-        return f"❌ 系統錯誤: {str(e)}"
+        import time
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = client.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=prompt,
+                )
+                return response.text if response.text else "助教沒有產出內容，請換個方式問問看。"
+            except Exception as e:
+                # If it's a 503 error, wait a bit and retry
+                if "503" in str(e) and attempt < max_retries - 1:
+                    time.sleep(2) # Wait 2 seconds before retrying
+                    continue
+                return f"❌ 系統錯誤: {str(e)}"
 
 custom_css = """
 body { background-color: #F0F8FF; }
