@@ -141,15 +141,14 @@ with gr.Blocks(title="DoraAImon 智慧助教") as demo:
             status = gr.Textbox(label="狀態", interactive=False, show_label=False)
             bookmarks = gr.Dropdown(label="書籤切換", choices=list(get_bookmarks().keys()))
             
-            exp_chat = gr.Button("匯出對話記錄", variant="secondary", size="sm")
-            download_file = gr.File(label=None, show_label=False, height=60, container=False)
+            exp_chat = gr.DownloadButton("匯出對話記錄", variant="secondary", size="sm")
 
             bookmarks.change(switch_bookmark, inputs=[bookmarks], outputs=[status])
             load_btn.click(load_files, inputs=[file_input, topic_input], outputs=[status, bookmarks])
 
         with gr.Column(scale=4):
             chatbot = gr.ChatInterface(fn=chat_interface_fn, chatbot=gr.Chatbot(height=650))
-            exp_chat.click(fn=save_chat_export, inputs=[chatbot.chatbot], outputs=[download_file])
+            exp_chat.click(fn=save_chat_export, inputs=[chatbot.chatbot], outputs=[exp_chat])
 
 if __name__ == "__main__":
     def open_browser(): webbrowser.open_new("http://127.0.0.1:7860")
