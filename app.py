@@ -9,6 +9,8 @@ import threading
 from docx import Document
 from dotenv import load_dotenv
 from fpdf import FPDF
+import datetime
+import re
 
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -19,7 +21,21 @@ UPLOAD_DIR = r"C:\Users\archi\OneDrive\Desktop\DoraAImon\uploads"
 
 def save_chat_export(history):
     if not history: return None
-    path = os.path.join(os.path.expanduser("~"), "Downloads", "DoraAImon_Chat_Export.md")
+    
+    # 取得第一句話當作主旨
+    first_msg = history[0]
+    if hasattr(first_msg, "role") or isinstance(first_msg, dict):
+        content = first_msg.get("content") if isinstance(first_msg, dict) else first_msg.content
+    else:
+        content = first_msg[0]
+        
+    subject = re.sub(r'[\\/*?:"<>|]', "", content).replace("\n", "").strip()[:10]
+    if not subject: subject = "聊天紀錄"
+    
+    time_tag = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"DoraAI_{time_tag}_{subject}.md"
+    
+    path = os.path.join(os.path.expanduser("~"), "Downloads", filename)
     with open(path, "w", encoding="utf-8") as f:
         f.write("# 🎓 DoraAImon 對話紀錄\n\n")
         # Handle Gradio 6 format (list of dicts/message objects)
